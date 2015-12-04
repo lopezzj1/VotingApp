@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DD81E771C1141A00001776B /* CreateProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E761C1141A00001776B /* CreateProfileController.swift */; };
+		9DD81E791C1142130001776B /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E781C1142130001776B /* MenuController.swift */; };
+		9DD81E7B1C1142280001776B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E7A1C1142280001776B /* ProfileController.swift */; };
+		9DD81E7D1C1142430001776B /* ResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E7C1C1142430001776B /* ResultsTableController.swift */; };
+		9DD81E7F1C11429A0001776B /* BallotInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E7E1C11429A0001776B /* BallotInfoController.swift */; };
+		9DD81E811C1142C00001776B /* BallotTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E801C1142C00001776B /* BallotTableController.swift */; };
+		9DD81E831C1142E50001776B /* BallotMeasureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E821C1142E50001776B /* BallotMeasureController.swift */; };
 		A55C0A821C111DD20014E4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C0A811C111DD20014E4EA /* AppDelegate.swift */; };
-		A55C0A841C111DD20014E4EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C0A831C111DD20014E4EA /* LoginViewController.swift */; };
+		A55C0A841C111DD20014E4EA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C0A831C111DD20014E4EA /* LoginController.swift */; };
 		A55C0A871C111DD20014E4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55C0A851C111DD20014E4EA /* Main.storyboard */; };
 		A55C0A891C111DD20014E4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55C0A881C111DD20014E4EA /* Assets.xcassets */; };
 		A55C0A8C1C111DD20014E4EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55C0A8A1C111DD20014E4EA /* LaunchScreen.storyboard */; };
@@ -34,9 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9DD81E761C1141A00001776B /* CreateProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileController.swift; sourceTree = "<group>"; };
+		9DD81E781C1142130001776B /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		9DD81E7A1C1142280001776B /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		9DD81E7C1C1142430001776B /* ResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableController.swift; sourceTree = "<group>"; };
+		9DD81E7E1C11429A0001776B /* BallotInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallotInfoController.swift; sourceTree = "<group>"; };
+		9DD81E801C1142C00001776B /* BallotTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallotTableController.swift; sourceTree = "<group>"; };
+		9DD81E821C1142E50001776B /* BallotMeasureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallotMeasureController.swift; sourceTree = "<group>"; };
 		A55C0A7E1C111DD20014E4EA /* VotingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VotingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55C0A811C111DD20014E4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A55C0A831C111DD20014E4EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A55C0A831C111DD20014E4EA /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A55C0A861C111DD20014E4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A55C0A881C111DD20014E4EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A55C0A8B1C111DD20014E4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,8 +112,15 @@
 			isa = PBXGroup;
 			children = (
 				A55C0A811C111DD20014E4EA /* AppDelegate.swift */,
-				A55C0A831C111DD20014E4EA /* LoginViewController.swift */,
+				A55C0A831C111DD20014E4EA /* LoginController.swift */,
 				A55C0A851C111DD20014E4EA /* Main.storyboard */,
+				9DD81E821C1142E50001776B /* BallotMeasureController.swift */,
+				9DD81E801C1142C00001776B /* BallotTableController.swift */,
+				9DD81E7E1C11429A0001776B /* BallotInfoController.swift */,
+				9DD81E7C1C1142430001776B /* ResultsTableController.swift */,
+				9DD81E7A1C1142280001776B /* ProfileController.swift */,
+				9DD81E781C1142130001776B /* MenuController.swift */,
+				9DD81E761C1141A00001776B /* CreateProfileController.swift */,
 				A55C0A881C111DD20014E4EA /* Assets.xcassets */,
 				A55C0A8A1C111DD20014E4EA /* LaunchScreen.storyboard */,
 				A55C0A8D1C111DD20014E4EA /* Info.plist */,
@@ -259,7 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55C0A841C111DD20014E4EA /* LoginViewController.swift in Sources */,
+				9DD81E831C1142E50001776B /* BallotMeasureController.swift in Sources */,
+				9DD81E811C1142C00001776B /* BallotTableController.swift in Sources */,
+				9DD81E7B1C1142280001776B /* ProfileController.swift in Sources */,
+				9DD81E791C1142130001776B /* MenuController.swift in Sources */,
+				9DD81E771C1141A00001776B /* CreateProfileController.swift in Sources */,
+				9DD81E7D1C1142430001776B /* ResultsTableController.swift in Sources */,
+				A55C0A841C111DD20014E4EA /* LoginController.swift in Sources */,
+				9DD81E7F1C11429A0001776B /* BallotInfoController.swift in Sources */,
 				A55C0A821C111DD20014E4EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
