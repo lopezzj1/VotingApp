@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A55C0A821C111DD20014E4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C0A811C111DD20014E4EA /* AppDelegate.swift */; };
-		A55C0A841C111DD20014E4EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C0A831C111DD20014E4EA /* ViewController.swift */; };
+		A55C0A841C111DD20014E4EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C0A831C111DD20014E4EA /* LoginViewController.swift */; };
 		A55C0A871C111DD20014E4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55C0A851C111DD20014E4EA /* Main.storyboard */; };
 		A55C0A891C111DD20014E4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55C0A881C111DD20014E4EA /* Assets.xcassets */; };
 		A55C0A8C1C111DD20014E4EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55C0A8A1C111DD20014E4EA /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		A55C0A7E1C111DD20014E4EA /* VotingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VotingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55C0A811C111DD20014E4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A55C0A831C111DD20014E4EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A55C0A831C111DD20014E4EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A55C0A861C111DD20014E4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A55C0A881C111DD20014E4EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A55C0A8B1C111DD20014E4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A55C0A811C111DD20014E4EA /* AppDelegate.swift */,
-				A55C0A831C111DD20014E4EA /* ViewController.swift */,
+				A55C0A831C111DD20014E4EA /* LoginViewController.swift */,
 				A55C0A851C111DD20014E4EA /* Main.storyboard */,
 				A55C0A881C111DD20014E4EA /* Assets.xcassets */,
 				A55C0A8A1C111DD20014E4EA /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55C0A841C111DD20014E4EA /* ViewController.swift in Sources */,
+				A55C0A841C111DD20014E4EA /* LoginViewController.swift in Sources */,
 				A55C0A821C111DD20014E4EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +485,7 @@
 				A55C0AA81C111DD30014E4EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A55C0AA91C111DD30014E4EA /* Build configuration list for PBXNativeTarget "VotingAppTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +494,7 @@
 				A55C0AAB1C111DD30014E4EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A55C0AAC1C111DD30014E4EA /* Build configuration list for PBXNativeTarget "VotingAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +503,7 @@
 				A55C0AAE1C111DD30014E4EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
