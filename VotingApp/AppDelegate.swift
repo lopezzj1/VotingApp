@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Initializes Parse application. Without this, all parse related stuff will break
+        Parse.setApplicationId("Ox8V2fKiD2ZDMERbkNl21I5gTzVTbwSI2rRaaGQ0", clientKey: "2AGi72tvgq3Eedk2CFFn4pWZZjxNAxQ6sSvWmZOl")
+
         return true
     }
 
