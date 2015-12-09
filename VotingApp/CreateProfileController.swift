@@ -10,6 +10,26 @@ import UIKit
 
 class CreateProfileController: UIViewController {
 
+    @IBOutlet weak var firstNameTextField: UITextField!
+    
+    @IBOutlet weak var lastNameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
+    @IBOutlet weak var cityTextField: UITextField!
+    
+    @IBOutlet weak var zipcodeTextField: UITextField!
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -39,7 +39,7 @@
                                 <rect key="frame" x="212" y="374" width="94" height="30"/>
                                 <state key="normal" title="Create Profile"/>
                                 <connections>
-                                    <segue destination="63t-l1-yaW" kind="show" id="l83-Mb-IMR"/>
+                                    <segue destination="63t-l1-yaW" kind="show" identifier="createProfileSegue" id="l83-Mb-IMR"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pJ-I3-ORr">
@@ -65,7 +65,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="RRK-af-fnS"/>
                     <connections>
-                        <segue destination="acR-65-ZbW" kind="show" id="pQG-Wx-whr"/>
+                        <outlet property="createProfileButton" destination="rNT-Mz-8Zm" id="3uz-zM-T2b"/>
+                        <outlet property="emailTextField" destination="3pJ-I3-ORr" id="LvL-4a-Pcf"/>
+                        <outlet property="loginButton" destination="9ec-fp-o2U" id="zUM-bz-FxO"/>
+                        <outlet property="passwordTextField" destination="j6x-oX-3ES" id="zX6-MP-E3j"/>
+                        <segue destination="acR-65-ZbW" kind="show" identifier="loginSegue" id="pQG-Wx-whr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,25 +112,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgu-Nc-sEP">
-                                <rect key="frame" x="71" y="173" width="44" height="30"/>
-                                <state key="normal" title="Profile"/>
-                                <connections>
-                                    <segue destination="LSd-UV-VWD" kind="show" id="XaF-0z-Mt5"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsK-2A-okD">
                                 <rect key="frame" x="390" y="173" width="63" height="30"/>
                                 <state key="normal" title="Elections"/>
                                 <connections>
-                                    <segue destination="POs-DF-6K5" kind="show" id="InF-ow-sFm"/>
+                                    <segue destination="POs-DF-6K5" kind="show" identifier="electionsSegue" id="InF-ow-sFm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BC-60-UW9">
                                 <rect key="frame" x="71" y="367" width="51" height="30"/>
                                 <state key="normal" title="Results"/>
                                 <connections>
-                                    <segue destination="hvc-bB-tlO" kind="show" id="fcS-HH-rj4"/>
+                                    <segue destination="hvc-bB-tlO" kind="show" identifier="resultsSegue" id="fcS-HH-rj4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgu-Nc-sEP">
+                                <rect key="frame" x="71" y="173" width="44" height="30"/>
+                                <state key="normal" title="Profile"/>
+                                <connections>
+                                    <segue destination="LSd-UV-VWD" kind="show" identifier="profileSegue" id="XaF-0z-Mt5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,6 +140,11 @@
                             <constraint firstItem="i6P-73-i7T" firstAttribute="top" secondItem="GQz-64-Ves" secondAttribute="bottom" constant="35" id="zQW-6X-LUd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="electionsButton" destination="tsK-2A-okD" id="r6A-31-jNw"/>
+                        <outlet property="profileButton" destination="dgu-Nc-sEP" id="PQM-NJ-slk"/>
+                        <outlet property="resultsButton" destination="3BC-60-UW9" id="QQZ-6R-f2h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8s-vJ-uGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,6 +178,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="startVoteButton" destination="vuC-OV-ays" id="4Tj-9K-0Fl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgv-s2-0sq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,7 +203,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="UlA-pz-4fi" kind="show" id="f8V-Uy-oW7"/>
+                                    <segue destination="UlA-pz-4fi" kind="show" identifier="ballotMeasureSegue" id="f8V-Uy-oW7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -249,10 +261,13 @@
                             <constraint firstItem="FZa-3o-NTe" firstAttribute="centerX" secondItem="0YH-lV-P2t" secondAttribute="centerX" id="hZy-zZ-PoD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="voteButton" destination="bIB-qh-PeJ" id="LIh-gb-ago"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KJ-Wf-Hf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3602" y="1306"/>
+            <point key="canvasLocation" x="3635" y="1306"/>
         </scene>
         <!--Results Table Controller-->
         <scene sceneID="hN9-OG-6w7">
@@ -270,6 +285,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ilm-Kj-1Bg" kind="show" id="aXc-eh-nJb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -281,6 +299,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21P-1m-N5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2210" y="1282"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="K6L-fo-gYA">
+            <objects>
+                <viewController id="ilm-Kj-1Bg" customClass="ResultsViewController" customModule="VotingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h3M-QR-EBk"/>
+                        <viewControllerLayoutGuide type="bottom" id="K6c-rg-ICF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WLv-ji-xMN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqY-c2-auN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2210" y="1999"/>
         </scene>
         <!--Create Profile Controller-->
         <scene sceneID="9ku-pG-eyn">
@@ -358,10 +394,6 @@
                                 <rect key="frame" x="531" y="550" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoQ-Hr-BfF">
-                                <rect key="frame" x="34" y="550" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2">
                                 <rect key="frame" x="211" y="125" width="271" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -402,9 +434,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoQ-Hr-BfF">
+                                <rect key="frame" x="34" y="550" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="AoQ-Hr-BfF" id="R6k-dt-Mch"/>
+                        <outlet property="cityTextField" destination="bM1-ks-g3L" id="2v1-xV-PFU"/>
+                        <outlet property="confirmPasswordTextField" destination="Mkv-Ps-GcO" id="YzU-D0-jw9"/>
+                        <outlet property="emailTextField" destination="u2U-Eu-rkP" id="081-Gn-TdL"/>
+                        <outlet property="firstNameTextField" destination="PkO-wF-AE2" id="3vC-MD-nnL"/>
+                        <outlet property="lastNameTextField" destination="5vB-Df-27Q" id="ybm-fi-84z"/>
+                        <outlet property="passwordTextField" destination="jw2-Mr-bgd" id="FDn-gI-tcI"/>
+                        <outlet property="submitButton" destination="W7U-lH-V8v" id="cpc-LS-lBp"/>
+                        <outlet property="zipcodeTextField" destination="lhy-uM-UBQ" id="Rwu-NK-AKG"/>
+                        <segue destination="acR-65-ZbW" kind="show" identifier="createProfileToMenuSegue" id="Ctp-oU-Zjk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHh-Q7-KU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -429,4 +477,7 @@
             <point key="canvasLocation" x="781" y="513"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ctp-oU-Zjk"/>
+    </inferredMetricsTieBreakers>
 </document>

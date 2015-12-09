@@ -1,17 +1,15 @@
 //
-//  BallotMeasureController.swift
+//  ResultsViewController.swift
 //  VotingApp
 //
-//  Created by iGuest on 12/3/15.
+//  Created by iGuest on 12/8/15.
 //  Copyright © 2015 Jill Lopez. All rights reserved.
 //
 
 import UIKit
 
-class BallotMeasureController: UIViewController {
+class ResultsViewController: UIViewController {
 
-    @IBOutlet weak var voteButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

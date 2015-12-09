@@ -10,6 +10,12 @@ import UIKit
 
 class MenuController: UIViewController {
 
+    @IBOutlet weak var profileButton: UIButton!
+    
+    @IBOutlet weak var electionsButton: UIButton!
+    
+    @IBOutlet weak var resultsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
