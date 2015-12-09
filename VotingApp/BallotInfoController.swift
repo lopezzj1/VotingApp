@@ -11,6 +11,9 @@ import UIKit
 class BallotInfoController: UIViewController {
 
     @IBOutlet weak var startVoteButton: UIButton!
+    @IBOutlet weak var ballotInfo: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
