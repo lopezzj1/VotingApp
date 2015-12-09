@@ -2,6 +2,8 @@
 
 #!! ERROR:  is undefined. Use list command to see defined gitignore types !!#
 
+.DS_Store
+
 ### Xcode ###
 # Xcode
 #
