@@ -511,10 +511,10 @@
             </objects>
             <point key="canvasLocation" x="1486" y="1282"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Hacky Nav Controller-->
         <scene sceneID="IeB-rV-1mD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZWP-Od-fdg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZWP-Od-fdg" customClass="HackyNavController" customModule="VotingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rlr-5q-XAL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -531,7 +531,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pQG-Wx-whr"/>
+        <segue reference="Ctp-oU-Zjk"/>
         <segue reference="f8V-Uy-oW7"/>
     </inferredMetricsTieBreakers>
 </document>

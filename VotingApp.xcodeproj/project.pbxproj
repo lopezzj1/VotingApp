@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D4D5D531C17A5C300BD65DE /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4D5D521C17A5C300BD65DE /* ResultsViewController.swift */; };
+		9D6137691C1CD26100EEF6D8 /* HackyNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6137681C1CD26100EEF6D8 /* HackyNavController.swift */; };
 		9DD81E771C1141A00001776B /* CreateProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E761C1141A00001776B /* CreateProfileController.swift */; };
 		9DD81E791C1142130001776B /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E781C1142130001776B /* MenuController.swift */; };
 		9DD81E7B1C1142280001776B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E7A1C1142280001776B /* ProfileController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		92D31FC486F65E72DDE73F12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9D4D5D521C17A5C300BD65DE /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		9D6137681C1CD26100EEF6D8 /* HackyNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackyNavController.swift; sourceTree = "<group>"; };
 		9DD81E761C1141A00001776B /* CreateProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileController.swift; sourceTree = "<group>"; };
 		9DD81E781C1142130001776B /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		9DD81E7A1C1142280001776B /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				A55C0A811C111DD20014E4EA /* AppDelegate.swift */,
 				A55C0A831C111DD20014E4EA /* LoginController.swift */,
 				A55C0A851C111DD20014E4EA /* Main.storyboard */,
+				9D6137681C1CD26100EEF6D8 /* HackyNavController.swift */,
 				9D4D5D521C17A5C300BD65DE /* ResultsViewController.swift */,
 				9DD81E821C1142E50001776B /* BallotMeasureController.swift */,
 				9DD81E801C1142C00001776B /* BallotTableController.swift */,
@@ -366,6 +369,7 @@
 				9DD81E771C1141A00001776B /* CreateProfileController.swift in Sources */,
 				9DD81E7D1C1142430001776B /* ResultsTableController.swift in Sources */,
 				A55C0A841C111DD20014E4EA /* LoginController.swift in Sources */,
+				9D6137691C1CD26100EEF6D8 /* HackyNavController.swift in Sources */,
 				9DD81E7F1C11429A0001776B /* BallotInfoController.swift in Sources */,
 				A55C0A821C111DD20014E4EA /* AppDelegate.swift in Sources */,
 			);

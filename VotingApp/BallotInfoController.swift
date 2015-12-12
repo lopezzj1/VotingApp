@@ -10,7 +10,8 @@ import UIKit
 import Parse
 
 struct Ballot {
-    let measures: [Measure]
+    let measures: [Measure]?
+    let measureRelation: PFRelation
     let closingDate: NSDate
     let desc: String
     let title: String
@@ -37,7 +38,7 @@ class BallotInfoController: UIViewController {
         // Don't try this unless it's loaded, otherwise it will attempt to unwrap optional UI Elements
         if self.isViewLoaded() {
             if let b = self.ballot {
-                self.ballotInfo.text = b.desc
+                self.ballotInfo.text = b.desc   
                 self.ballotTitle.text = b.title
                 self.closingDate.text = b.closingDate.description
             }
