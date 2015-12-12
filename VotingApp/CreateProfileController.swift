@@ -11,18 +11,23 @@ import UIKit
 class CreateProfileController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
+    var firstName = ""
     
     @IBOutlet weak var lastNameTextField: UITextField!
+    var lastName = ""
     
     @IBOutlet weak var emailTextField: UITextField!
+    var email = ""
     
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     @IBOutlet weak var cityTextField: UITextField!
+    var city = ""
     
     @IBOutlet weak var zipcodeTextField: UITextField!
+    var zipcode = ""
     
     @IBOutlet weak var cancelButton: UIButton!
     
@@ -45,9 +50,13 @@ class CreateProfileController: UIViewController {
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
         
-        firstNameTextField 
-        
-        
+        firstName = firstNameTextField.text!
+        lastName = lastNameTextField.text!
+        email = emailTextField.text!
+        city = cityTextField.text!
+        zipcode = zipcodeTextField.text!
+
+
         
         
     }
