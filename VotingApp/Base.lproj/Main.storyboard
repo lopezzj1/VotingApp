@@ -285,7 +285,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="measureCell" id="iWp-rw-e7X" customClass="MeasureCell" customModule="VotingApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iWp-rw-e7X" id="VDZ-Vw-dOz">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -381,7 +381,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WcS-Vn-gcO">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WcS-Vn-gcO" id="JMs-pI-5Yd">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -438,13 +438,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoQ-Hr-BfF">
-                                <rect key="frame" x="20" y="550" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="63t-l1-yaW" eventType="touchUpInside" id="2Mp-vs-2tU"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2">
                                 <rect key="frame" x="211" y="125" width="271" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -497,6 +490,13 @@
                                     <action selector="submitButtonPressed:" destination="63t-l1-yaW" eventType="touchUpInside" id="qKl-c6-P1e"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-kX-wOL">
+                                <rect key="frame" x="27" y="550" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Tu3-3g-WQj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -511,7 +511,6 @@
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="h15-E5-Km2" id="AbQ-7A-2z8"/>
-                        <outlet property="cancelButton" destination="AoQ-Hr-BfF" id="R6k-dt-Mch"/>
                         <outlet property="cityTextField" destination="bM1-ks-g3L" id="2v1-xV-PFU"/>
                         <outlet property="confirmPasswordTextField" destination="Mkv-Ps-GcO" id="YzU-D0-jw9"/>
                         <outlet property="emailTextField" destination="u2U-Eu-rkP" id="081-Gn-TdL"/>
@@ -525,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHh-Q7-KU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="1282"/>
+            <point key="canvasLocation" x="1333" y="1429"/>
         </scene>
         <!--Hacky Nav Controller-->
         <scene sceneID="IeB-rV-1mD">
@@ -548,6 +547,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Ctp-oU-Zjk"/>
+        <segue reference="Tu3-3g-WQj"/>
         <segue reference="f8V-Uy-oW7"/>
     </inferredMetricsTieBreakers>
 </document>

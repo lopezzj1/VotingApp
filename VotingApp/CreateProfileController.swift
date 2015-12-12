@@ -29,7 +29,7 @@ class CreateProfileController: UIViewController {
 
     @IBOutlet weak var zipcodeTextField: UITextField!
 
-    @IBOutlet weak var cancelButton: UIButton!
+
     
     @IBOutlet weak var submitButton: UIButton!
     
@@ -89,11 +89,7 @@ class CreateProfileController: UIViewController {
         
     }
     
-    
-    @IBAction func cancelButtonPressed(sender: AnyObject) {
-        
-    }
-    
+
 
     /*
     // MARK: - Navigation
