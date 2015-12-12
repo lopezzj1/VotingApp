@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import Parse
+
+struct Measure {
+    let title: String
+    let candidates: PFRelation
+}
 
 class BallotMeasureController: UIViewController {
 

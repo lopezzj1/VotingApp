@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 struct Ballot {
-    let measures: [String]
+    let measures: [Measure]
     let closingDate: NSDate
     let desc: String
     let title: String

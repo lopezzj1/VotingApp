@@ -38,21 +38,27 @@ class MenuController: UIViewController {
                 let title: String = parseBallot["title"] as! String
                 let description: String = parseBallot["description"] as! String
                 
-                let ballot = Ballot(measures: ["test", "test"], closingDate: closingDate, desc: description, title: title)
-                
-                // If a controller is set, that means we've gone to the next controller already, and will update it there
-                if let ctrl = self.ballotCtrl {
-                    ctrl.ballot = ballot
-                    ctrl.setLabels()
-                // Otherwise we're still in the menu, and just need the ballot to be cached
-                } else {
-                    self.ballot = ballot
-                }
-                
+                // Now we execute yet another query to get the measures
                 measureRelation.query().findObjectsInBackgroundWithBlock {
                     (objects: [PFObject]?, error: NSError?) -> Void in
-                    if let measures = objects {
-                        print(measures)
+                    if let pMeasures = objects {
+                        let measures = pMeasures.map {
+                            (object: PFObject) -> Measure in
+                            let title = object["measureTitle"] as! String
+                            let candidates = object["candidates"] as! PFRelation
+                            return Measure(title: title, candidates: candidates)
+                        }
+                        
+                        let ballot = Ballot(measures: measures, closingDate: closingDate, desc: description, title: title)
+                        
+                        // If a controller is set, that means we've gone to the next controller already, and will update it there
+                        if let ctrl = self.ballotCtrl {
+                            ctrl.ballot = ballot
+                            ctrl.setLabels()
+                            // Otherwise we're still in the menu, and just need the ballot to be cached
+                        } else {
+                            self.ballot = ballot
+                        }
                     }
                 }
             }
