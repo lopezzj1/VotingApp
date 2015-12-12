@@ -37,6 +37,8 @@ class CreateProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.hidden = true;
 
         // Do any additional setup after loading the view.
     }
@@ -51,22 +53,45 @@ class CreateProfileController: UIViewController {
     @IBAction func submitButtonPressed(sender: AnyObject) {
         
 
-        
-        var user = PFUser()
+        let user = PFUser()
         user["firstName"] = firstNameTextField.text!
         user["lastName"] = lastNameTextField.text!
         user.email = emailTextField.text!
         user.password = passwordTextField.text!
         user["city"] = cityTextField.text!
         user["zipcode"] = zipcodeTextField.text!
-
-
+        user["address"] = addressTextField.text!
+        user["state"] = "Washington"
+        
+        user.username = emailTextField.text!
+        
+        if passwordTextField.text! == confirmPasswordTextField.text! {
+            user.signUpInBackgroundWithBlock {
+                (succeeded: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    let errorString = error.userInfo["error"] as? String
+                    NSLog(errorString!)
+                } else {
+                    print("success")
+                    let nav: HackyNavController = self.navigationController as! HackyNavController
+                    nav.cachedUser = user
+                    self.performSegueWithIdentifier("createProfileToMenuSegue", sender: nil)
+  
+                }
+            }
+            
+        } else {
+            print("wrong password")
+        }
+        
+        
         
         
     }
     
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
+        
     }
     
 

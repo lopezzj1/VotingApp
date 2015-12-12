@@ -26,7 +26,11 @@ class MenuController: UIViewController {
         super.viewDidLoad()
         
         
+        
         let nav: HackyNavController = self.navigationController as! HackyNavController
+        
+        
+        
         if let ballot = nav.cachedBallot {
             self.ballot = ballot
         } else {

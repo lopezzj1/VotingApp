@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class LoginController: UIViewController {
 
@@ -30,7 +31,23 @@ class LoginController: UIViewController {
     }
 
     @IBAction func loginButtonPress(sender: UIButton) {
-        self.performSegueWithIdentifier("loginSegue", sender: sender)
+        
+        
+        PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!) {
+            
+            (user: PFUser?, error: NSError?) -> Void in
+           
+            if user != nil {
+                print("succes!")
+                let nav: HackyNavController = self.navigationController as! HackyNavController
+                self.performSegueWithIdentifier("loginSegue", sender: sender)
+                nav.cachedUser = user
+            } else {
+                print("fail")
+            }
+        }
+        
+        
     }
 
 }

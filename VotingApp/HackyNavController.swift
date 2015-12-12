@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class HackyNavController: UINavigationController {
 
     var cachedBallot: Ballot? = nil
+    
+    var cachedUser: PFUser? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
