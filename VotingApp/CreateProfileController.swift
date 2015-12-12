@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class CreateProfileController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
+
     
     @IBOutlet weak var lastNameTextField: UITextField!
+
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -20,10 +23,12 @@ class CreateProfileController: UIViewController {
     
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    @IBOutlet weak var addressTextField: UITextField!
+    
     @IBOutlet weak var cityTextField: UITextField!
-    
+
     @IBOutlet weak var zipcodeTextField: UITextField!
-    
+
     @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var submitButton: UIButton!
@@ -39,6 +44,29 @@ class CreateProfileController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+        
+
+        
+        var user = PFUser()
+        user["firstName"] = firstNameTextField.text!
+        user["lastName"] = lastNameTextField.text!
+        user.email = emailTextField.text!
+        user.password = passwordTextField.text!
+        user["city"] = cityTextField.text!
+        user["zipcode"] = zipcodeTextField.text!
+
+
+        
+        
+    }
+    
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
     }
     
 
