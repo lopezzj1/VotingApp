@@ -56,23 +56,6 @@ class MenuController: UIViewController {
                     } else {
                         self.ballot = ballot
                     }
-                    
-                    // Now we execute yet another query to get the measures
-                    /*
-                    measureRelation.query().findObjectsInBackgroundWithBlock {
-                        (objects: [PFObject]?, error: NSError?) -> Void in
-                        if let pMeasures = objects {
-                            let measures = pMeasures.map {
-                                (object: PFObject) -> Measure in
-                                let title = object["measureTitle"] as! String
-                                let candidates = object["candidates"] as! PFRelation
-                                return Measure(title: title, candidates: candidates)
-                            }
-                            
-
-                        }
-                    }
-                    */
                 }
             }
         }
