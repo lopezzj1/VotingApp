@@ -9,17 +9,13 @@
 import UIKit
 import Parse
 
-struct Measure {
-    let title: String
-    let candidates: PFRelation
-}
 
 class BallotMeasureController: UIViewController {
 
     @IBOutlet weak var voteButton: UIButton!
     @IBOutlet weak var ballotOptions: UITableView!
-    
-    
+
+    var measure: Measure? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +27,10 @@ class BallotMeasureController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Do an if check if another segue is ever added
+        //let dest = segue.destinationViewController as! BallotTableController
     }
-    */
-
 }
