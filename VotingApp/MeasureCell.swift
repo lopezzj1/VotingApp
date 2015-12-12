@@ -9,5 +9,6 @@
 import UIKit
 
 class MeasureCell: UITableViewCell {
+
     @IBOutlet weak var titleLabel: UILabel!
 }
