@@ -41,6 +41,21 @@ class CreateProfileController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+        
+        firstNameTextField 
+        
+        
+        
+        
+    }
+    
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+    }
+    
 
     /*
     // MARK: - Navigation
