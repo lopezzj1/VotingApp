@@ -29,6 +29,9 @@ class LoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func loginButtonPress(sender: UIButton) {
+        self.performSegueWithIdentifier("loginSegue", sender: sender)
+    }
 
 }
 

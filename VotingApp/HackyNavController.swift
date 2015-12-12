@@ -1,25 +1,16 @@
 //
-//  BallotMeasureController.swift
+//  HackyNavController.swift
 //  VotingApp
 //
-//  Created by iGuest on 12/3/15.
+//  Created by iGuest on 12/12/15.
 //  Copyright © 2015 Jill Lopez. All rights reserved.
 //
 
 import UIKit
-import Parse
 
-struct Measure {
-    let title: String
-    let candidates: PFRelation
-}
+class HackyNavController: UINavigationController {
 
-class BallotMeasureController: UIViewController {
-
-    @IBOutlet weak var voteButton: UIButton!
-    @IBOutlet weak var ballotOptions: UITableView!
-    
-    
+    var cachedBallot: Ballot? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +26,7 @@ class BallotMeasureController: UIViewController {
 
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
