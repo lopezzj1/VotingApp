@@ -7,28 +7,28 @@
 //
 
 import UIKit
+import Parse
 
 class CreateProfileController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
-    var firstName = ""
+
     
     @IBOutlet weak var lastNameTextField: UITextField!
-    var lastName = ""
+
     
     @IBOutlet weak var emailTextField: UITextField!
-    var email = ""
     
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    @IBOutlet weak var addressTextField: UITextField!
+    
     @IBOutlet weak var cityTextField: UITextField!
-    var city = ""
-    
+
     @IBOutlet weak var zipcodeTextField: UITextField!
-    var zipcode = ""
-    
+
     @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var submitButton: UIButton!
@@ -50,11 +50,15 @@ class CreateProfileController: UIViewController {
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
         
-        firstName = firstNameTextField.text!
-        lastName = lastNameTextField.text!
-        email = emailTextField.text!
-        city = cityTextField.text!
-        zipcode = zipcodeTextField.text!
+
+        
+        var user = PFUser()
+        user["firstName"] = firstNameTextField.text!
+        user["lastName"] = lastNameTextField.text!
+        user.email = emailTextField.text!
+        user.password = passwordTextField.text!
+        user["city"] = cityTextField.text!
+        user["zipcode"] = zipcodeTextField.text!
 
 
         

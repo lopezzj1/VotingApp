@@ -501,6 +501,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressTextField" destination="h15-E5-Km2" id="AbQ-7A-2z8"/>
                         <outlet property="cancelButton" destination="AoQ-Hr-BfF" id="R6k-dt-Mch"/>
                         <outlet property="cityTextField" destination="bM1-ks-g3L" id="2v1-xV-PFU"/>
                         <outlet property="confirmPasswordTextField" destination="Mkv-Ps-GcO" id="YzU-D0-jw9"/>
