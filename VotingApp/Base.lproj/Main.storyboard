@@ -21,20 +21,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag_background" translatesAutoresizingMaskIntoConstraints="NO" id="BjD-17-jnh">
                                 <rect key="frame" x="0.0" y="-32" width="600" height="632"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pJ-I3-ORr">
-                                <rect key="frame" x="153" y="244" width="295" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pJ-I3-ORr">
+                                <rect key="frame" x="76" y="259" width="450" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6x-oX-3ES">
-                                <rect key="frame" x="153" y="286" width="295" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6x-oX-3ES">
+                                <rect key="frame" x="76" y="306" width="450" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PushTheVote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozu-UF-yhE">
-                                <rect key="frame" x="171" y="45" width="259" height="54"/>
+                                <rect key="frame" x="171" y="70" width="259" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -46,18 +46,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-Mz-8Zm">
-                                <rect key="frame" x="188" y="384" width="224" height="35"/>
-                                <color key="backgroundColor" red="0.070588235294117646" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Create Profile">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="63t-l1-yaW" kind="show" identifier="createProfileSegue" id="l83-Mb-IMR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-fp-o2U">
-                                <rect key="frame" x="188" y="346" width="224" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-fp-o2U">
+                                <rect key="frame" x="131" y="378" width="338" height="32"/>
                                 <color key="backgroundColor" red="0.74509803921568629" green="0.12941176470588234" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,19 +56,39 @@
                                     <action selector="loginButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6w9-Lr-M1X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-Mz-8Zm">
+                                <rect key="frame" x="131" y="413" width="338" height="32"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="63t-l1-yaW" kind="show" identifier="createProfileSegue" id="l83-Mb-IMR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ozu-UF-yhE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1h1-uA-kvs"/>
-                            <constraint firstItem="j6x-oX-3ES" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68W-Ey-vFg"/>
+                            <constraint firstItem="rNT-Mz-8Zm" firstAttribute="width" secondItem="9ec-fp-o2U" secondAttribute="width" id="1wY-R7-zyM"/>
+                            <constraint firstItem="j6x-oX-3ES" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="68W-Ey-vFg"/>
                             <constraint firstItem="rNT-Mz-8Zm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Dt-vP-0qb"/>
-                            <constraint firstItem="9ec-fp-o2U" firstAttribute="top" secondItem="j6x-oX-3ES" secondAttribute="bottom" constant="20" id="B2G-sl-lIb"/>
+                            <constraint firstItem="9ec-fp-o2U" firstAttribute="top" secondItem="j6x-oX-3ES" secondAttribute="bottom" constant="30" id="B2G-sl-lIb"/>
+                            <constraint firstItem="j6x-oX-3ES" firstAttribute="width" secondItem="3pJ-I3-ORr" secondAttribute="width" id="FdD-p7-XkY"/>
+                            <constraint firstItem="9ec-fp-o2U" firstAttribute="height" secondItem="3pJ-I3-ORr" secondAttribute="height" multiplier="0.75" id="HRJ-HV-B5Z"/>
+                            <constraint firstItem="j6x-oX-3ES" firstAttribute="top" secondItem="3pJ-I3-ORr" secondAttribute="bottom" constant="5" id="KD0-Hf-Bp7"/>
+                            <constraint firstItem="rNT-Mz-8Zm" firstAttribute="height" secondItem="9ec-fp-o2U" secondAttribute="height" id="Lm4-jg-Z86"/>
                             <constraint firstItem="9ec-fp-o2U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OBZ-z4-2Yi"/>
                             <constraint firstItem="ECR-gb-5Oq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qle-8g-VJZ"/>
-                            <constraint firstItem="Ozu-UF-yhE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="dUV-Yr-99V"/>
-                            <constraint firstItem="3pJ-I3-ORr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tIh-nE-WUt"/>
+                            <constraint firstItem="Ozu-UF-yhE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="dUV-Yr-99V"/>
+                            <constraint firstItem="9ec-fp-o2U" firstAttribute="width" secondItem="3pJ-I3-ORr" secondAttribute="width" multiplier="0.75" id="ii6-wi-leW"/>
+                            <constraint firstItem="3pJ-I3-ORr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.07" id="laa-nL-Bu7"/>
+                            <constraint firstItem="3pJ-I3-ORr" firstAttribute="top" secondItem="Ozu-UF-yhE" secondAttribute="bottom" constant="135" id="s41-tr-rFT"/>
+                            <constraint firstItem="3pJ-I3-ORr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="tIh-nE-WUt"/>
+                            <constraint firstItem="3pJ-I3-ORr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="uuU-qt-pcX"/>
                             <constraint firstItem="rNT-Mz-8Zm" firstAttribute="top" secondItem="9ec-fp-o2U" secondAttribute="bottom" constant="3" id="x2u-07-ShF"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ECR-gb-5Oq" secondAttribute="bottom" constant="15" id="yGf-IM-h2T"/>
+                            <constraint firstItem="j6x-oX-3ES" firstAttribute="height" secondItem="3pJ-I3-ORr" secondAttribute="height" id="yxa-Mg-hM8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RRK-af-fnS"/>
@@ -437,6 +447,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfi-Ji-ZzL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-aE-OcZ">
                                 <rect key="frame" x="0.0" y="-32" width="600" height="632"/>
                             </imageView>
@@ -446,61 +459,61 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2">
-                                <rect key="frame" x="175" y="110" width="250" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2">
+                                <rect key="frame" x="60" y="110" width="480" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-Df-27Q">
-                                <rect key="frame" x="175" y="150" width="250" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-Df-27Q">
+                                <rect key="frame" x="60" y="162" width="480" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-Eu-rkP">
-                                <rect key="frame" x="175" y="190" width="250" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-Eu-rkP">
+                                <rect key="frame" x="60" y="214" width="480" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw2-Mr-bgd">
-                                <rect key="frame" x="175" y="230" width="250" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw2-Mr-bgd">
+                                <rect key="frame" x="60" y="266" width="480" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-Ps-GcO">
-                                <rect key="frame" x="175" y="270" width="250" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-Ps-GcO">
+                                <rect key="frame" x="60" y="318" width="480" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h15-E5-Km2">
-                                <rect key="frame" x="175" y="310" width="250" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h15-E5-Km2">
+                                <rect key="frame" x="60" y="370" width="480" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-ks-g3L">
-                                <rect key="frame" x="175" y="350" width="161" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-ks-g3L">
+                                <rect key="frame" x="60" y="422" width="360" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-uM-UBQ">
-                                <rect key="frame" x="175" y="390" width="81" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-uM-UBQ">
+                                <rect key="frame" x="60" y="474" width="180" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JD-okN">
-                                <rect key="frame" x="339" y="350" width="86" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JD-okN">
+                                <rect key="frame" x="423" y="422" width="117" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7U-lH-V8v">
-                                <rect key="frame" x="175" y="460" width="110" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7U-lH-V8v">
+                                <rect key="frame" x="60" y="556" width="158" height="34"/>
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="63t-l1-yaW" eventType="touchUpInside" id="qKl-c6-P1e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-kX-wOL">
-                                <rect key="frame" x="315" y="460" width="110" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-kX-wOL">
+                                <rect key="frame" x="382" y="556" width="158" height="34"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.12941176469999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
