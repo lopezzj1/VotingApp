@@ -19,5 +19,15 @@ struct Ballot {
 
 struct Measure {
     let title: String
-    let candidates: PFRelation
+    let candidatesRelation: PFRelation
+    let candidates: [Candidate]?
+}
+
+struct Candidate {
+    let name: String
+    let title: String
+    let bioURL: String
+    let bioText: String
+    let pictureURL: String
+    let position: String
 }

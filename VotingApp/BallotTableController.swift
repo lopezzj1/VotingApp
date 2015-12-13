@@ -48,6 +48,20 @@ class BallotTableController: UITableViewController {
         return cell
     }
 
+    // Called when a user selects a cell
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.dequeueReusableCellWithIdentifier("measureCell", forIndexPath: indexPath) as! MeasureCell
+        if let measure = self.measures?[indexPath.row] {
+            if let candidates = measure.candidates {
+                // Set this value for the next controller, it's been cached already
+            } else { // start doing a query for the candidates, we don't have it
+                measure.candidatesRelation.query().findObjectsInBackgroundWithBlock{
+                    (objects: [PFObject]?, error: NSError?) -> Void in
+                    
+                }
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
