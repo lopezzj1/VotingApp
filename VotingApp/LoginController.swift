@@ -22,6 +22,7 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.hidden = true;
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -43,7 +44,11 @@ class LoginController: UIViewController {
                 self.performSegueWithIdentifier("loginSegue", sender: sender)
                 nav.cachedUser = user
             } else {
-                print("fail")
+                let alertController = UIAlertController(title: "Login Failed", message: "The email or password you entered was incorrect.", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
         

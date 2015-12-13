@@ -65,29 +65,45 @@ class CreateProfileController: UIViewController {
         
         user.username = emailTextField.text!
         
-        if passwordTextField.text! == confirmPasswordTextField.text! {
-            user.signUpInBackgroundWithBlock {
-                (succeeded: Bool, error: NSError?) -> Void in
-                if let error = error {
-                    let errorString = error.userInfo["error"] as? String
-                    NSLog(errorString!)
-                } else {
-                    print("success")
-                    let nav: HackyNavController = self.navigationController as! HackyNavController
-                    nav.cachedUser = user
-                    self.performSegueWithIdentifier("createProfileToMenuSegue", sender: nil)
-  
+        if (addressTextField.text != "" || cityTextField.text != "" || zipcodeTextField.text != "") {
+            if passwordTextField.text! == confirmPasswordTextField.text! {
+
+                user.signUpInBackgroundWithBlock {
+                    (succeeded: Bool, error: NSError?) -> Void in
+                    if let error = error {
+                        let errorString = error.userInfo["error"] as? String
+                        if (errorString == "invalid email address") {
+                            
+                            let alertController = UIAlertController(title: "Email Incorrect", message: "You entered an invalid email address.", preferredStyle: UIAlertControllerStyle.Alert)
+                            
+                            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        }
+                    } else {
+                        print("success")
+                        let nav: HackyNavController = self.navigationController as! HackyNavController
+                        nav.cachedUser = user
+                        self.performSegueWithIdentifier("createProfileToMenuSegue", sender: nil)
+                    }
                 }
+            } else {
+                let alertController = UIAlertController(title: "Password Incorrect", message: "Password and Confirm Password does not match.", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
-            
         } else {
-            print("wrong password")
+            let alertController = UIAlertController(title: "Missing Fields", message: "Please make sure that all fields are completed.",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
         }
-        
-        
-        
-        
-    }
+     }
     
 
 
