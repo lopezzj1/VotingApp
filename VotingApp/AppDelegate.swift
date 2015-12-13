@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initializes Parse application. Without this, all parse related stuff will break
         Parse.setApplicationId("Ox8V2fKiD2ZDMERbkNl21I5gTzVTbwSI2rRaaGQ0", clientKey: "2AGi72tvgq3Eedk2CFFn4pWZZjxNAxQ6sSvWmZOl")
-
+        PFUser.enableRevocableSessionInBackground()
         return true
     }
 

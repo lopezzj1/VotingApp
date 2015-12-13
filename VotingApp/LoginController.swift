@@ -23,6 +23,27 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = true;
+        let nav: HackyNavController = self.navigationController as! HackyNavController
+        
+        
+        let currentUser = PFUser.currentUser()
+        
+        if currentUser != nil {
+            PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!) {
+                
+                (user: PFUser?, error: NSError?) -> Void in
+                
+                if user != nil {
+                    print("succes!")
+                    self.performSegueWithIdentifier("loginSegue", sender: nil)
+                    nav.cachedUser = user
+                }
+            }
+        } else {
+            print("error")
+        }
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
