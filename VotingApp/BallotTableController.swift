@@ -15,6 +15,10 @@ class BallotTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let path = NSIndexPath(forRow: 0, inSection: 0)
+        let scroll = UITableViewScrollPosition(rawValue: 0)
+        NSLog("about to select")
+        self.tableView.selectRowAtIndexPath(path, animated: true, scrollPosition: scroll!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,56 +51,43 @@ class BallotTableController: UITableViewController {
         
         return cell
     }
-
+    
     // Called when a user selects a cell
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("measureCell", forIndexPath: indexPath) as! MeasureCell
+        NSLog("WFT")
+        //let cell = tableView.dequeueReusableCellWithIdentifier("measureCell", forIndexPath: indexPath) as! MeasureCell
         if let measure = self.measures?[indexPath.row] {
             if let candidates = measure.candidates {
                 // Set this value for the next controller, it's been cached already
             } else { // start doing a query for the candidates, we don't have it
-                measure.candidatesRelation.query().findObjectsInBackgroundWithBlock{
-                    (objects: [PFObject]?, error: NSError?) -> Void in
-                    
-                }
+                self.measures![indexPath.row].candidates = getCandidatesForMeasure(measure.candidatesRelation.query())
+                NSLog("finished getting candidates I think maybe")
             }
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func getCandidatesForMeasure(measureQuery: PFQuery) -> [Candidate] {
+        var result: [Candidate] = []
+        measureQuery.findObjectsInBackgroundWithBlock{
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if let candidates = objects {
+                for candidateParseObject in candidates {
+                    let name = candidateParseObject["name"] as! String
+                    let title = candidateParseObject["title"] as! String
+                    let bioURL = candidateParseObject["bioURL"] as! String
+                    let bioText = candidateParseObject["bioText"] as! String
+                    let pictureURL = candidateParseObject["pictureURL"] as! String
+                    let position = candidateParseObject["position"] as! String
+                    let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position)
+                    result.append(thisCandidate)
+                }
+            } else { //no candidates found.
+                //shit this wasn't supposed to happen there are no answers for this ballot
+                print("we're stuck here")
+            }
+        }
+        return result
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation

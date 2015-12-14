@@ -10,7 +10,7 @@ import Foundation
 import Parse
 
 struct Ballot {
-    let measures: [Measure]?
+    var measures: [Measure]?
     let measureRelation: PFRelation
     let closingDate: NSDate
     let desc: String
@@ -20,7 +20,7 @@ struct Ballot {
 struct Measure {
     let title: String
     let candidatesRelation: PFRelation
-    let candidates: [Candidate]?
+    var candidates: [Candidate]?
 }
 
 struct Candidate {
