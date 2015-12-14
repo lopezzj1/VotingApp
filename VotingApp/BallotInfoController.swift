@@ -33,7 +33,8 @@ class BallotInfoController: UIViewController {
                         (object: PFObject) -> Measure in
                         let title = object["measureTitle"] as! String
                         let candidates = object["candidates"] as! PFRelation
-                        return Measure(title: title, candidatesRelation: candidates, candidates: nil)
+                        let parseObjId = object.objectId!
+                        return Measure(title: title, candidatesRelation: candidates, candidates: nil, parseObjId: parseObjId)
                     }
                     if let ctrl = self.tableCtrl {
                         // The table will suddenly populate with data

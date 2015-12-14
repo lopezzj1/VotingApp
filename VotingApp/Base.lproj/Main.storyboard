@@ -492,7 +492,6 @@
                                 <state key="normal" title="Vote"/>
                                 <connections>
                                     <action selector="voteButtonPress:" destination="UlA-pz-4fi" eventType="touchUpInside" id="fWm-VF-lpQ"/>
-                                    <segue destination="UlA-pz-4fi" kind="show" id="REr-Xz-W5m"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZa-3o-NTe">
@@ -801,6 +800,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="Ctp-oU-Zjk"/>
         <segue reference="Tu3-3g-WQj"/>
-        <segue reference="hDg-fe-z4L"/>
     </inferredMetricsTieBreakers>
 </document>

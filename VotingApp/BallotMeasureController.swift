@@ -41,7 +41,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                             let bioText = candidateParseObject["bioText"] as! String
                             let pictureURL = candidateParseObject["pictureURL"] as! String
                             let position = candidateParseObject["position"] as! String
-                            let parseObjId = candidateParseObject["objectId"] as! String
+                            let parseObjId = candidateParseObject.objectId! as String
                             let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position, parseObjId: parseObjId)
                             measure.candidates!.append(thisCandidate)
                         }
@@ -83,12 +83,52 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
         return 0
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedCandidate = self.measure!.candidates[indexPath.row]
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedCandidate = self.measure!.candidates![indexPath.row]
+        NSLog((self.selectedCandidate?.name)!)
+        NSLog("\(indexPath.row)")
     }
 
     @IBAction func voteButtonPress(sender: UIButton) {
-        
+        //push the vote up to parse
+        if let candidate = self.selectedCandidate {
+            if let user = PFUser.currentUser() {
+                if user.authenticated {
+                    //check if the user has already voted on this before
+                    let ballotResponseQuery = PFQuery(className:"ballotResponse")
+                    ballotResponseQuery.whereKey("ballotMeasureId", equalTo: self.measure!.parseObjId)
+                    ballotResponseQuery.whereKey("userId", equalTo: user.objectId!)
+                    
+                    var ballotResponse: PFObject? = nil
+                    
+                    ballotResponseQuery.findObjectsInBackgroundWithBlock {
+                        (objects: [PFObject]?, error: NSError?) -> Void in
+                        if let objects = objects { //update old vote
+                            ballotResponse = objects[0]
+                            ballotResponse!["candidateId"] = candidate.parseObjId
+                        } else { //new vote
+                            ballotResponse = PFObject(className:"ballotResponse")
+                            ballotResponse!["ballotMeasureId"] = self.measure!.parseObjId
+                            ballotResponse!["userId"] = user.objectId!
+                            ballotResponse!["candidateId"] = candidate.parseObjId
+                        }
+                        ballotResponse!.saveInBackgroundWithBlock {
+                            (success: Bool, error: NSError?) -> Void in
+                            if (success) {
+                                NSLog("TYVM for voting for \(candidate.name)")
+                            } else {
+                                NSLog("voting failed")
+                            }
+                        }
+                    }
+                } else {
+                    NSLog("user not authenticated")
+                }
+            } else {
+                NSLog("no user somehow")
+            }
+        }
+        //do nothing if no candidate is selected.
     }
     
     override func didReceiveMemoryWarning() {

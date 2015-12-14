@@ -21,6 +21,7 @@ struct Measure {
     let title: String
     let candidatesRelation: PFRelation
     var candidates: [Candidate]?
+    let parseObjId: String
 }
 
 struct Candidate {
