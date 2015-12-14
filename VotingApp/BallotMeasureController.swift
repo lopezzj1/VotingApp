@@ -10,16 +10,19 @@ import UIKit
 import Parse
 
 
-class BallotMeasureController: UIViewController {
+class BallotMeasureController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var voteButton: UIButton!
     @IBOutlet weak var ballotOptions: UITableView!
+    @IBOutlet weak var tableView: UITableView!
 
     var measure: Measure? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -42,7 +45,6 @@ class BallotMeasureController: UIViewController {
                         }
                         self.measure = measure
                         self.updateTable()
-                        
                     } else { //no candidates found.
                         //shit this wasn't supposed to happen there are no answers for this ballot
                         NSLog("BAD DATA NO CANDIDATES")
@@ -52,11 +54,30 @@ class BallotMeasureController: UIViewController {
         }else {
             //SOMETHING BAD HAPPEND THERE IS NO MEASURE
         }
-        
     }
     
     func updateTable() {
+        self.tableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("options", forIndexPath: indexPath) 
         
+        if let candidates = self.measure!.candidates {
+            //cell.titleLabel.text = candidates[indexPath.row].title
+            cell.textLabel?.text = candidates[indexPath.row].name
+        }
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let measure = self.measure {
+            if let candidates = measure.candidates {
+                return candidates.count
+            }
+        }
+        return 0
     }
 
     override func didReceiveMemoryWarning() {

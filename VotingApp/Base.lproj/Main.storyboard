@@ -382,6 +382,9 @@
                             <outlet property="delegate" destination="6h3-as-IGN" id="eVI-tr-XB7"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="UlA-pz-4fi" kind="show" identifier="showMeasureSegue" id="hDg-fe-z4L"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyv-Dd-nQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,6 +438,7 @@
                     </view>
                     <connections>
                         <outlet property="ballotOptions" destination="Woz-Bw-9Lv" id="8Zg-gk-xUB"/>
+                        <outlet property="tableView" destination="Woz-Bw-9Lv" id="aQy-In-kDi"/>
                         <outlet property="voteButton" destination="bIB-qh-PeJ" id="LIh-gb-ago"/>
                     </connections>
                 </viewController>
@@ -710,5 +714,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Ctp-oU-Zjk"/>
         <segue reference="Tu3-3g-WQj"/>
+        <segue reference="hDg-fe-z4L"/>
     </inferredMetricsTieBreakers>
 </document>

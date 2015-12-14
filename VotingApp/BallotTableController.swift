@@ -13,6 +13,7 @@ class BallotTableController: UITableViewController {
 
     var measures: [Measure]? = nil
     var measureCtrl: BallotMeasureController? = nil
+    var measureToSend: Measure? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,18 +62,25 @@ class BallotTableController: UITableViewController {
                 // Set this value for the next controller, it's been cached already
             }
             
-            self.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)
+            self.measureToSend = measure
+            
+            self.performSegueWithIdentifier("showMeasureSegue", sender: nil)
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showMeasureSegue" {
+            let destinationVC = segue.destinationViewController as! BallotMeasureController
+            destinationVC.measure = self.measureToSend
+        }
     }
-    */
+
 
 }
