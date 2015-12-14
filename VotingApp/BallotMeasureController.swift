@@ -17,6 +17,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
 
     var measure: Measure? = nil
+    var selectedCandidate: Candidate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,8 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                             let bioText = candidateParseObject["bioText"] as! String
                             let pictureURL = candidateParseObject["pictureURL"] as! String
                             let position = candidateParseObject["position"] as! String
-                            let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position)
+                            let parseObjId = candidateParseObject["objectId"] as! String
+                            let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position, parseObjId: parseObjId)
                             measure.candidates!.append(thisCandidate)
                         }
                         self.measure = measure
@@ -53,6 +55,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
             }
         }else {
             //SOMETHING BAD HAPPEND THERE IS NO MEASURE
+            NSLog("THERE WAS NO MEASURE, THIS SHOULD NOT BE POSSIBLE")
         }
     }
     
@@ -79,7 +82,15 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
         }
         return 0
     }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedCandidate = self.measure!.candidates[indexPath.row]
+    }
 
+    @IBAction func voteButtonPress(sender: UIButton) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

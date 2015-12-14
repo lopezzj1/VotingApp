@@ -30,4 +30,5 @@ struct Candidate {
     let bioText: String
     let pictureURL: String
     let position: String
+    let parseObjId: String
 }
