@@ -12,6 +12,7 @@ import Parse
 class BallotTableController: UITableViewController {
 
     var measures: [Measure]? = nil
+    var measureCtrl: BallotMeasureController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,39 +55,14 @@ class BallotTableController: UITableViewController {
     
     // Called when a user selects a cell
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSLog("WFT")
         //let cell = tableView.dequeueReusableCellWithIdentifier("measureCell", forIndexPath: indexPath) as! MeasureCell
         if let measure = self.measures?[indexPath.row] {
             if let candidates = measure.candidates {
                 // Set this value for the next controller, it's been cached already
-            } else { // start doing a query for the candidates, we don't have it
-                self.measures![indexPath.row].candidates = getCandidatesForMeasure(measure.candidatesRelation.query())
-                NSLog("finished getting candidates I think maybe")
             }
+            
+            self.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)
         }
-    }
-    
-    func getCandidatesForMeasure(measureQuery: PFQuery) -> [Candidate] {
-        var result: [Candidate] = []
-        measureQuery.findObjectsInBackgroundWithBlock{
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            if let candidates = objects {
-                for candidateParseObject in candidates {
-                    let name = candidateParseObject["name"] as! String
-                    let title = candidateParseObject["title"] as! String
-                    let bioURL = candidateParseObject["bioURL"] as! String
-                    let bioText = candidateParseObject["bioText"] as! String
-                    let pictureURL = candidateParseObject["pictureURL"] as! String
-                    let position = candidateParseObject["position"] as! String
-                    let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position)
-                    result.append(thisCandidate)
-                }
-            } else { //no candidates found.
-                //shit this wasn't supposed to happen there are no answers for this ballot
-                print("we're stuck here")
-            }
-        }
-        return result
     }
 
     /*
