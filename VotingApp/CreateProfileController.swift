@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class CreateProfileController: UIViewController, UITextFieldDelegate {
+class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     
@@ -24,6 +24,8 @@ class CreateProfileController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addressTextField: UITextField!
     
     @IBOutlet weak var cityTextField: UITextField!
+    
+    @IBOutlet weak var stateTextField: UITextField!
 
     @IBOutlet weak var zipcodeTextField: UITextField!
 
@@ -31,12 +33,38 @@ class CreateProfileController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var picker = UIPickerView()
+    var states = ["Alabama", "Oregon", "Washington"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.hidden = true;
-
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.hidden = true;
+        stateTextField.inputView = picker
+        
+        picker = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
+        picker.backgroundColor = .whiteColor()
+        
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        
+        let toolbar = UIToolbar()
+        toolbar.barStyle = UIBarStyle.Default
+        toolbar.translucent = true
+        toolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "hidePicker:")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "hidePicker:")
+        
+        toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolbar.userInteractionEnabled = true
+        
+        stateTextField.inputView = picker
+        stateTextField.inputAccessoryView = toolbar
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +72,10 @@ class CreateProfileController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func hidePicker(sender: UIBarButtonItem) -> Bool {
+        stateTextField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
         
@@ -151,6 +183,27 @@ class CreateProfileController: UIViewController, UITextFieldDelegate {
         print("touchesBegan worked")
     }
 
+    
+    
+    //for UIPickerView
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return states.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        stateTextField.text = states[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return states[row]
+    }
+    
+    
 
     /*
     // MARK: - Navigation

@@ -625,22 +625,22 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="Tu3-3g-WQj"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JD-okN" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="423" y="401" width="117" height="42"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="101" width="480" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="101" width="480" height="42"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JD-okN" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="248" y="451" width="117" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                                 <real key="value" value="10"/>
@@ -675,6 +675,7 @@
                         <outlet property="lastNameTextField" destination="5vB-Df-27Q" id="ybm-fi-84z"/>
                         <outlet property="passwordTextField" destination="jw2-Mr-bgd" id="FDn-gI-tcI"/>
                         <outlet property="scrollView" destination="9Yj-rO-vt0" id="GfZ-xt-b1X"/>
+                        <outlet property="stateTextField" destination="5G4-JD-okN" id="Crb-pY-g1W"/>
                         <outlet property="submitButton" destination="W7U-lH-V8v" id="cpc-LS-lBp"/>
                         <outlet property="zipcodeTextField" destination="lhy-uM-UBQ" id="Rwu-NK-AKG"/>
                         <segue destination="acR-65-ZbW" kind="show" identifier="createProfileToMenuSegue" id="Ctp-oU-Zjk"/>
