@@ -34,7 +34,6 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
     @IBOutlet weak var scrollView: UIScrollView!
     
     var picker = UIPickerView()
-    var states = ["Alabama", "Oregon", "Washington"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +66,8 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         stateTextField.inputAccessoryView = toolbar
         
         zipcodeTextField.inputAccessoryView = toolbar
+        
+        print(states)
     }
 
     override func didReceiveMemoryWarning() {
