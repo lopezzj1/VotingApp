@@ -67,16 +67,6 @@
                                     <action selector="loginButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6w9-Lr-M1X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-Mz-8Zm">
-                                <rect key="frame" x="131" y="413" width="338" height="32"/>
-                                <color key="backgroundColor" red="0.070588235294117646" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Create Profile">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="63t-l1-yaW" kind="show" identifier="createProfileSegue" id="l83-Mb-IMR"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RED-3c-DFA">
                                 <rect key="frame" x="237" y="204" width="127" height="40"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,6 +75,16 @@
                                 </state>
                                 <connections>
                                     <segue destination="acR-65-ZbW" kind="show" id="D0h-cy-gom"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-Mz-8Zm">
+                                <rect key="frame" x="131" y="413" width="338" height="32"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create Profile">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="63t-l1-yaW" kind="show" id="rUc-ge-QTz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,7 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RRK-af-fnS"/>
                     <connections>
-                        <outlet property="createProfileButton" destination="rNT-Mz-8Zm" id="3uz-zM-T2b"/>
+                        <outlet property="createProfileButton" destination="rNT-Mz-8Zm" id="LBo-Ob-55q"/>
                         <outlet property="emailTextField" destination="3pJ-I3-ORr" id="LvL-4a-Pcf"/>
                         <outlet property="loginButton" destination="9ec-fp-o2U" id="zUM-bz-FxO"/>
                         <outlet property="passwordTextField" destination="j6x-oX-3ES" id="zX6-MP-E3j"/>
@@ -762,7 +762,6 @@
                         <outlet property="scrollView" destination="9Yj-rO-vt0" id="GfZ-xt-b1X"/>
                         <outlet property="stateTextField" destination="5G4-JD-okN" id="Crb-pY-g1W"/>
                         <outlet property="submitButton" destination="W7U-lH-V8v" id="cpc-LS-lBp"/>
-                        <outlet property="test" destination="EwZ-aE-OcZ" id="LEt-B8-SSD"/>
                         <outlet property="zipcodeTextField" destination="lhy-uM-UBQ" id="Rwu-NK-AKG"/>
                         <segue destination="acR-65-ZbW" kind="show" identifier="createProfileToMenuSegue" id="Ctp-oU-Zjk"/>
                     </connections>
