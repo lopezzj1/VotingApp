@@ -17,6 +17,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
 
     var measure: Measure? = nil
+    var selectedCandidate: Candidate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,8 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                             let bioText = candidateParseObject["bioText"] as! String
                             let pictureURL = candidateParseObject["pictureURL"] as! String
                             let position = candidateParseObject["position"] as! String
-                            let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position)
+                            let parseObjId = candidateParseObject.objectId! as String
+                            let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position, parseObjId: parseObjId)
                             measure.candidates!.append(thisCandidate)
                         }
                         self.measure = measure
@@ -53,6 +55,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
             }
         }else {
             //SOMETHING BAD HAPPEND THERE IS NO MEASURE
+            NSLog("THERE WAS NO MEASURE, THIS SHOULD NOT BE POSSIBLE")
         }
     }
     
@@ -79,7 +82,57 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
         }
         return 0
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedCandidate = self.measure!.candidates![indexPath.row]
+    }
 
+    @IBAction func voteButtonPress(sender: UIButton) {
+        //push the vote up to parse
+        if let candidate = self.selectedCandidate {
+            if let user = PFUser.currentUser() {
+                if user.authenticated {
+                    //check if the user has already voted on this before
+                    let ballotResponseQuery = PFQuery(className:"ballotResponse")
+                    ballotResponseQuery.whereKey("ballotMeasureId", equalTo: self.measure!.parseObjId)
+                    ballotResponseQuery.whereKey("userId", equalTo: user.objectId!)
+                    
+                    var ballotResponse: PFObject? = nil
+                    
+                    ballotResponseQuery.findObjectsInBackgroundWithBlock {
+                        (objects: [PFObject]?, error: NSError?) -> Void in
+                        if let objects = objects {
+                            if objects.count > 0 { //update old vote
+                                ballotResponse = objects[0]
+                                ballotResponse!["candidateId"] = candidate.parseObjId
+                            } else { // new vote
+                                ballotResponse = PFObject(className:"ballotResponse")
+                                ballotResponse!["ballotMeasureId"] = self.measure!.parseObjId
+                                ballotResponse!["userId"] = user.objectId!
+                                ballotResponse!["candidateId"] = candidate.parseObjId
+                            }
+                        } else { //error
+                            
+                        }
+                        ballotResponse!.saveInBackgroundWithBlock {
+                            (success: Bool, error: NSError?) -> Void in
+                            if (success) {
+                                NSLog("TYVM for voting for \(candidate.name)")
+                            } else {
+                                NSLog("voting failed")
+                            }
+                        }
+                    }
+                } else {
+                    NSLog("user not authenticated")
+                }
+            } else {
+                NSLog("no user somehow")
+            }
+        }
+        //do nothing if no candidate is selected.
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
