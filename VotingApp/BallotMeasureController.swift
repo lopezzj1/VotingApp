@@ -85,8 +85,6 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedCandidate = self.measure!.candidates![indexPath.row]
-        NSLog((self.selectedCandidate?.name)!)
-        NSLog("\(indexPath.row)")
     }
 
     @IBAction func voteButtonPress(sender: UIButton) {
@@ -103,14 +101,18 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                     
                     ballotResponseQuery.findObjectsInBackgroundWithBlock {
                         (objects: [PFObject]?, error: NSError?) -> Void in
-                        if let objects = objects { //update old vote
-                            ballotResponse = objects[0]
-                            ballotResponse!["candidateId"] = candidate.parseObjId
-                        } else { //new vote
-                            ballotResponse = PFObject(className:"ballotResponse")
-                            ballotResponse!["ballotMeasureId"] = self.measure!.parseObjId
-                            ballotResponse!["userId"] = user.objectId!
-                            ballotResponse!["candidateId"] = candidate.parseObjId
+                        if let objects = objects {
+                            if objects.count > 0 { //update old vote
+                                ballotResponse = objects[0]
+                                ballotResponse!["candidateId"] = candidate.parseObjId
+                            } else { // new vote
+                                ballotResponse = PFObject(className:"ballotResponse")
+                                ballotResponse!["ballotMeasureId"] = self.measure!.parseObjId
+                                ballotResponse!["userId"] = user.objectId!
+                                ballotResponse!["candidateId"] = candidate.parseObjId
+                            }
+                        } else { //error
+                            
                         }
                         ballotResponse!.saveInBackgroundWithBlock {
                             (success: Bool, error: NSError?) -> Void in
