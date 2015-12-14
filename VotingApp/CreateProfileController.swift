@@ -65,6 +65,8 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         
         stateTextField.inputView = picker
         stateTextField.inputAccessoryView = toolbar
+        
+        zipcodeTextField.inputAccessoryView = toolbar
     }
 
     override func didReceiveMemoryWarning() {

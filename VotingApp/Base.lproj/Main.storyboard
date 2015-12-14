@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZWP-Od-fdg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZWP-Od-fdg">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="513"/>
+            <point key="canvasLocation" x="1359" y="559"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="K29-zh-kss">
@@ -145,50 +145,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Gt-66Y">
-                                <rect key="frame" x="165" y="104" width="271" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7e-K9-gXX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colored_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-n9-pgh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7e-K9-gXX" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="165" y="157" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLJ-YF-nXg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLJ-YF-nXg" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="165" y="213" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="An8-mB-hyf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="An8-mB-hyf" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="165" y="265" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxn-6G-e8o">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxn-6G-e8o" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="165" y="316" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-YS-xb5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-YS-xb5" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="165" y="367" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWO-Hy-dZa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWO-Hy-dZa" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="165" y="415" width="161" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-KP-5Ut">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-KP-5Ut" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="165" y="465" width="81" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="baw-s0-zP4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="baw-s0-zP4" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="350" y="415" width="86" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-h8-H9w">
                                 <rect key="frame" x="244" y="527" width="113" height="30"/>
@@ -197,9 +243,20 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A45-yv-ckc">
                                 <rect key="frame" x="236" y="45" width="129" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Gt-66Y" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="104" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -207,9 +264,13 @@
                             <constraint firstItem="D7e-K9-gXX" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="4PK-jo-UHY"/>
                             <constraint firstItem="MKL-KP-5Ut" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="7yF-ho-VEq"/>
                             <constraint firstItem="Vx6-YS-xb5" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="8uf-cO-m9y"/>
+                            <constraint firstAttribute="trailing" secondItem="iXD-n9-pgh" secondAttribute="trailing" id="C2d-Ic-y7h"/>
+                            <constraint firstItem="iXD-n9-pgh" firstAttribute="leading" secondItem="4ij-Jd-cHR" secondAttribute="leading" id="FhV-I4-BTO"/>
+                            <constraint firstItem="yB9-fY-TBh" firstAttribute="top" secondItem="iXD-n9-pgh" secondAttribute="bottom" id="GoJ-S2-Vfl"/>
                             <constraint firstItem="A45-yv-ckc" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" multiplier="0.3" id="N4t-sT-DXJ"/>
                             <constraint firstItem="0vN-Gt-66Y" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="R1F-0c-Obt"/>
                             <constraint firstItem="LLJ-YF-nXg" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="YD3-qu-avC"/>
+                            <constraint firstItem="iXD-n9-pgh" firstAttribute="top" secondItem="4ij-Jd-cHR" secondAttribute="top" id="Zfd-J9-GGz"/>
                             <constraint firstItem="An8-mB-hyf" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="iz3-FG-HkK"/>
                             <constraint firstItem="A45-yv-ckc" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="mas-dy-r2E"/>
                             <constraint firstItem="Xxn-6G-e8o" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="yj1-c1-QJl"/>
@@ -218,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsm-HB-ekr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2217" y="-157"/>
+            <point key="canvasLocation" x="2217" y="-205"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="zdB-Mt-9D1">
@@ -232,8 +293,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colored_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="FHW-HI-cP7">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="colored_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="FHW-HI-cP7">
+                                <rect key="frame" x="-1" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6P-73-i7T">
                                 <rect key="frame" x="262" y="72" width="75" height="36"/>
@@ -265,24 +326,48 @@
                                     <segue destination="POs-DF-6K5" kind="show" identifier="electionsSegue" id="InF-ow-sFm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FO8-nX-M0h">
+                                <rect key="frame" x="78" y="400" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPE-yW-uKR">
+                                <rect key="frame" x="255" y="400" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-Za-Gus">
+                                <rect key="frame" x="460" y="400" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3BC-60-UW9" firstAttribute="centerX" secondItem="dgu-Nc-sEP" secondAttribute="centerX" multiplier="1.625" id="4UO-A2-jsP"/>
                             <constraint firstItem="tsK-2A-okD" firstAttribute="width" secondItem="dgu-Nc-sEP" secondAttribute="width" id="7n3-Rv-mn7"/>
+                            <constraint firstItem="fO0-Za-Gus" firstAttribute="top" secondItem="3BC-60-UW9" secondAttribute="bottom" constant="25" id="9En-BV-ZPB"/>
                             <constraint firstItem="3BC-60-UW9" firstAttribute="centerY" secondItem="dTo-YP-dXd" secondAttribute="centerY" id="AIa-tS-zy5"/>
+                            <constraint firstItem="KPE-yW-uKR" firstAttribute="top" secondItem="dgu-Nc-sEP" secondAttribute="bottom" constant="25" id="D3g-EL-m7W"/>
                             <constraint firstItem="i6P-73-i7T" firstAttribute="centerY" secondItem="dTo-YP-dXd" secondAttribute="centerY" multiplier="0.3" id="GPx-D9-5WI"/>
                             <constraint firstAttribute="trailing" secondItem="FHW-HI-cP7" secondAttribute="trailing" id="OI0-uf-UHJ"/>
                             <constraint firstItem="FHW-HI-cP7" firstAttribute="top" secondItem="dTo-YP-dXd" secondAttribute="top" id="Ts1-i1-kHq"/>
                             <constraint firstItem="dgu-Nc-sEP" firstAttribute="width" secondItem="dTo-YP-dXd" secondAttribute="width" multiplier="0.25" id="YBq-lO-n85"/>
                             <constraint firstItem="tsK-2A-okD" firstAttribute="centerY" secondItem="dTo-YP-dXd" secondAttribute="centerY" id="ZI7-uX-IO0"/>
                             <constraint firstItem="tsK-2A-okD" firstAttribute="height" secondItem="dgu-Nc-sEP" secondAttribute="height" id="bRm-lJ-Puj"/>
+                            <constraint firstItem="FO8-nX-M0h" firstAttribute="centerX" secondItem="KPE-yW-uKR" secondAttribute="centerX" multiplier="0.375" id="bcD-JM-pfJ"/>
                             <constraint firstItem="3BC-60-UW9" firstAttribute="height" secondItem="dgu-Nc-sEP" secondAttribute="height" id="bmu-2K-a3U"/>
                             <constraint firstItem="3BC-60-UW9" firstAttribute="width" secondItem="dgu-Nc-sEP" secondAttribute="width" id="chW-Ac-0Nu"/>
                             <constraint firstItem="PdI-8m-1gj" firstAttribute="top" secondItem="FHW-HI-cP7" secondAttribute="bottom" id="iUX-cB-d8A"/>
                             <constraint firstItem="i6P-73-i7T" firstAttribute="centerX" secondItem="dTo-YP-dXd" secondAttribute="centerX" id="kkM-c6-EeW"/>
                             <constraint firstItem="dgu-Nc-sEP" firstAttribute="centerX" secondItem="dTo-YP-dXd" secondAttribute="centerX" id="lm0-0t-T0p"/>
                             <constraint firstItem="dgu-Nc-sEP" firstAttribute="centerY" secondItem="dTo-YP-dXd" secondAttribute="centerY" id="m3B-Y2-Vxe"/>
+                            <constraint firstItem="FO8-nX-M0h" firstAttribute="top" secondItem="tsK-2A-okD" secondAttribute="bottom" constant="25" id="oBW-2o-RhI"/>
+                            <constraint firstItem="fO0-Za-Gus" firstAttribute="centerX" secondItem="KPE-yW-uKR" secondAttribute="centerX" multiplier="1.625" id="qer-e4-8dG"/>
+                            <constraint firstItem="KPE-yW-uKR" firstAttribute="centerX" secondItem="dgu-Nc-sEP" secondAttribute="centerX" id="wSs-kM-N04"/>
                             <constraint firstItem="tsK-2A-okD" firstAttribute="centerX" secondItem="dgu-Nc-sEP" secondAttribute="centerX" multiplier="0.375" id="yoG-dT-hI5"/>
                             <constraint firstItem="FHW-HI-cP7" firstAttribute="leading" secondItem="dTo-YP-dXd" secondAttribute="leading" id="zs3-dU-OTK"/>
                         </constraints>
@@ -295,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8s-vJ-uGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2217" y="513"/>
+            <point key="canvasLocation" x="2217" y="559"/>
         </scene>
         <!--Ballot Info Controller-->
         <scene sceneID="iwl-nw-SwR">
@@ -346,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgv-s2-0sq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2956" y="513"/>
+            <point key="canvasLocation" x="3086" y="559"/>
         </scene>
         <!--Ballot Table Controller-->
         <scene sceneID="ypF-2H-GoE">
@@ -388,7 +473,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyv-Dd-nQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2956" y="1304"/>
+            <point key="canvasLocation" x="3086" y="1330"/>
         </scene>
         <!--Ballot Measure Controller-->
         <scene sceneID="nz5-IW-C9c">
@@ -444,7 +529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KJ-Wf-Hf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3641" y="1282"/>
+            <point key="canvasLocation" x="3957" y="1330"/>
         </scene>
         <!--Results Table Controller-->
         <scene sceneID="hN9-OG-6w7">
@@ -475,7 +560,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21P-1m-N5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2210" y="1282"/>
+            <point key="canvasLocation" x="2217" y="1330"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="K6L-fo-gYA">
@@ -493,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqY-c2-auN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2210" y="1999"/>
+            <point key="canvasLocation" x="2217" y="2101"/>
         </scene>
         <!--Create Profile Controller-->
         <scene sceneID="9ku-pG-eyn">
@@ -607,7 +692,7 @@
                                         <rect key="frame" x="60" y="451" width="180" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                                 <real key="value" value="10"/>
@@ -619,7 +704,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-kX-wOL">
                                         <rect key="frame" x="34" y="539" width="158" height="34"/>
-                                        <color key="backgroundColor" red="0.74509803919999995" green="0.12941176469999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="Tu3-3g-WQj"/>
@@ -651,7 +736,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7U-lH-V8v">
                                 <rect key="frame" x="215" y="539" width="158" height="34"/>
-                                <color key="backgroundColor" red="0.070588235294117646" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.63921568630000003" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="63t-l1-yaW" eventType="touchUpInside" id="qKl-c6-P1e"/>
@@ -677,13 +762,14 @@
                         <outlet property="scrollView" destination="9Yj-rO-vt0" id="GfZ-xt-b1X"/>
                         <outlet property="stateTextField" destination="5G4-JD-okN" id="Crb-pY-g1W"/>
                         <outlet property="submitButton" destination="W7U-lH-V8v" id="cpc-LS-lBp"/>
+                        <outlet property="test" destination="EwZ-aE-OcZ" id="LEt-B8-SSD"/>
                         <outlet property="zipcodeTextField" destination="lhy-uM-UBQ" id="Rwu-NK-AKG"/>
                         <segue destination="acR-65-ZbW" kind="show" identifier="createProfileToMenuSegue" id="Ctp-oU-Zjk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHh-Q7-KU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1333" y="1429"/>
+            <point key="canvasLocation" x="1359" y="1330"/>
         </scene>
         <!--Hacky Nav Controller-->
         <scene sceneID="IeB-rV-1mD">
@@ -701,7 +787,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7A5-4T-8Ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="513"/>
+            <point key="canvasLocation" x="517" y="559"/>
         </scene>
     </scenes>
     <resources>
