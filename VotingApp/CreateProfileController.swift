@@ -9,13 +9,11 @@
 import UIKit
 import Parse
 
-class CreateProfileController: UIViewController {
+class CreateProfileController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstNameTextField: UITextField!
-
     
     @IBOutlet weak var lastNameTextField: UITextField!
-
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -29,11 +27,9 @@ class CreateProfileController: UIViewController {
 
     @IBOutlet weak var zipcodeTextField: UITextField!
 
-
-    
     @IBOutlet weak var submitButton: UIButton!
-    
-    
+
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +43,6 @@ class CreateProfileController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
@@ -105,6 +100,56 @@ class CreateProfileController: UIViewController {
         }
      }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == firstNameTextField {
+            lastNameTextField.becomeFirstResponder()
+            
+        } else if textField == lastNameTextField {
+            lastNameTextField.resignFirstResponder()
+            emailTextField.becomeFirstResponder()
+            
+        } else if textField == emailTextField {
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+            
+        } else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+            confirmPasswordTextField.becomeFirstResponder()
+            
+        } else if textField == confirmPasswordTextField {
+            confirmPasswordTextField.resignFirstResponder()
+            addressTextField.becomeFirstResponder()
+            
+        } else if textField == addressTextField {
+            addressTextField.resignFirstResponder()
+            cityTextField.becomeFirstResponder()
+            
+        } else if textField == cityTextField {
+            cityTextField.resignFirstResponder()
+        }
+        
+        
+        if textField == zipcodeTextField {
+            zipcodeTextField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if (textField == addressTextField || textField == cityTextField || textField == zipcodeTextField) {
+            scrollView.setContentOffset(CGPointMake(0, 100), animated: true)
+        }
+    }
+    
+    func textFieldDidEndEditing(textField : UITextField) {
+        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.scrollView.endEditing(true)
+        print("touchesBegan worked")
+    }
 
 
     /*
