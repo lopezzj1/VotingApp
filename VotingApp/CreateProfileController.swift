@@ -35,6 +35,8 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
     
     var picker = UIPickerView()
     
+    var state: String = states[0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,25 +51,43 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         picker.delegate = self
         picker.dataSource = self
         
-        let toolbar = UIToolbar()
-        toolbar.barStyle = UIBarStyle.Default
-        toolbar.translucent = true
-        toolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        toolbar.sizeToFit()
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        cityTextField.delegate = self
+        zipcodeTextField.delegate = self
+        stateTextField.delegate = self
+        
+        zipcodeTextField.returnKeyType = UIReturnKeyType.Next
+        
+        let zipToolbar = UIToolbar()
+        zipToolbar.barStyle = UIBarStyle.Default
+        zipToolbar.translucent = true
+        zipToolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        zipToolbar.sizeToFit()
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "hidePicker:")
+        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: "nextHandler:")
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "hidePicker:")
+
+        let stateToolbar = UIToolbar()
+        stateToolbar.barStyle = UIBarStyle.Default
+        stateToolbar.translucent = true
+        stateToolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        stateToolbar.sizeToFit()
         
-        toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-        toolbar.userInteractionEnabled = true
+        stateToolbar.setItems([spaceButton, doneButton], animated: false)
+        stateToolbar.userInteractionEnabled = true
+        
+        zipToolbar.setItems([nextButton, spaceButton], animated: false)
+        zipToolbar.userInteractionEnabled = true
         
         stateTextField.inputView = picker
-        stateTextField.inputAccessoryView = toolbar
+        stateTextField.inputAccessoryView = stateToolbar
         
-        zipcodeTextField.inputAccessoryView = toolbar
-        
-        print(states)
+        zipcodeTextField.inputAccessoryView = zipToolbar
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,12 +96,17 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     
     func hidePicker(sender: UIBarButtonItem) -> Bool {
-        stateTextField.resignFirstResponder()
+        self.stateTextField.resignFirstResponder()
+        self.stateTextField.text = self.state
+        return true
+    }
+    
+    func nextHandler(sender: UIBarButtonItem) -> Bool {
+        self.textFieldShouldReturn(zipcodeTextField)
         return true
     }
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
-        
 
         let user = PFUser()
         user["firstName"] = firstNameTextField.text!
@@ -91,7 +116,7 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         user["city"] = cityTextField.text!
         user["zipcode"] = zipcodeTextField.text!
         user["address"] = addressTextField.text!
-        user["state"] = "Washington"
+        user["state"] = self.state
         
         user.username = emailTextField.text!
         
@@ -135,40 +160,21 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         }
      }
     
+    // For text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField == firstNameTextField {
-            lastNameTextField.becomeFirstResponder()
-            
-        } else if textField == lastNameTextField {
-            lastNameTextField.resignFirstResponder()
-            emailTextField.becomeFirstResponder()
-            
-        } else if textField == emailTextField {
-            emailTextField.resignFirstResponder()
-            passwordTextField.becomeFirstResponder()
-            
-        } else if textField == passwordTextField {
-            passwordTextField.resignFirstResponder()
-            confirmPasswordTextField.becomeFirstResponder()
-            
-        } else if textField == confirmPasswordTextField {
-            confirmPasswordTextField.resignFirstResponder()
-            addressTextField.becomeFirstResponder()
-            
-        } else if textField == addressTextField {
-            addressTextField.resignFirstResponder()
-            cityTextField.becomeFirstResponder()
-            
-        } else if textField == cityTextField {
-            cityTextField.resignFirstResponder()
+        let signUpOrder = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField, confirmPasswordTextField, addressTextField, cityTextField, zipcodeTextField, stateTextField]
+        let matchedFieldNum = signUpOrder.indexOf { (tf) -> Bool in
+            return tf == textField
         }
+
+        let matchedField = signUpOrder[matchedFieldNum!]
+        let nextField = signUpOrder[matchedFieldNum! + 1]
         
-        
-        if textField == zipcodeTextField {
-            zipcodeTextField.resignFirstResponder()
-        }
-        
-        return true
+
+        matchedField.resignFirstResponder()
+        nextField.becomeFirstResponder()
+
+        return false
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -180,16 +186,15 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
     func textFieldDidEndEditing(textField : UITextField) {
         scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
     }
+
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.scrollView.endEditing(true)
         print("touchesBegan worked")
     }
-
     
     
-    //for UIPickerView
-    
+    //for UIPickerViewDelegate
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -199,14 +204,14 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        stateTextField.text = states[row]
+        let state = states[row]
+        stateTextField.text = state
+        self.state = state
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return states[row]
     }
-    
-    
 
     /*
     // MARK: - Navigation
