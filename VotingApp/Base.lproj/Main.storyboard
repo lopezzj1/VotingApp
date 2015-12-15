@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -157,17 +158,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-h8-H9w">
-                                <rect key="frame" x="180" y="507" width="240" height="34"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Submit Changes">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitButtonPressed:" destination="LSd-UV-VWD" eventType="touchUpInside" id="JE7-aE-UCf"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mmh-bD-h1C">
                                 <rect key="frame" x="60" y="134" width="480" height="331"/>
                                 <subviews>
@@ -297,21 +287,60 @@
                                     <constraint firstItem="An8-mB-hyf" firstAttribute="top" secondItem="LLJ-YF-nXg" secondAttribute="bottom" constant="5" id="jnM-Kd-HLR"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-h8-H9w">
+                                <rect key="frame" x="348" y="508" width="192" height="34"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.12941176469999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Submit Changes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="LSd-UV-VWD" eventType="touchUpInside" id="JE7-aE-UCf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5b-9Q-qx9">
+                                <rect key="frame" x="60" y="508" width="192" height="34"/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="acR-65-ZbW" kind="show" id="4yZ-s2-3fF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-NK-WUG" userLabel="Logout Icon">
+                                <rect key="frame" x="506" y="30" width="64" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="LSd-UV-VWD" eventType="touchUpInside" id="fx7-8S-eZ4"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="fGG-Jf-Za4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KmS-h8-H9w" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="32l-73-iuC"/>
+                            <constraint firstItem="F5b-9Q-qx9" firstAttribute="height" secondItem="KmS-h8-H9w" secondAttribute="height" id="12y-Yn-aQQ"/>
+                            <constraint firstItem="KmS-h8-H9w" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" multiplier="1.75" id="3qo-iA-adS"/>
+                            <constraint firstItem="F5b-9Q-qx9" firstAttribute="leading" secondItem="MKL-KP-5Ut" secondAttribute="leading" id="42R-8L-09Y"/>
+                            <constraint firstItem="F5b-9Q-qx9" firstAttribute="width" secondItem="KmS-h8-H9w" secondAttribute="width" id="97i-MF-csp"/>
                             <constraint firstAttribute="trailing" secondItem="iXD-n9-pgh" secondAttribute="trailing" id="C2d-Ic-y7h"/>
                             <constraint firstItem="iXD-n9-pgh" firstAttribute="leading" secondItem="4ij-Jd-cHR" secondAttribute="leading" id="FhV-I4-BTO"/>
                             <constraint firstItem="yB9-fY-TBh" firstAttribute="top" secondItem="iXD-n9-pgh" secondAttribute="bottom" id="GoJ-S2-Vfl"/>
                             <constraint firstItem="mmh-bD-h1C" firstAttribute="width" secondItem="4ij-Jd-cHR" secondAttribute="width" multiplier="0.8" id="Jz8-op-wWV"/>
                             <constraint firstItem="mmh-bD-h1C" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="K7G-pc-m8F"/>
                             <constraint firstItem="A45-yv-ckc" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" multiplier="0.25" id="N4t-sT-DXJ"/>
-                            <constraint firstItem="KmS-h8-H9w" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" multiplier="0.5" id="YEI-iv-APA"/>
+                            <constraint firstItem="KmS-h8-H9w" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" multiplier="0.4" id="YEI-iv-APA"/>
                             <constraint firstItem="iXD-n9-pgh" firstAttribute="top" secondItem="4ij-Jd-cHR" secondAttribute="top" id="Zfd-J9-GGz"/>
                             <constraint firstItem="mmh-bD-h1C" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" id="do7-uH-Jym"/>
                             <constraint firstItem="A45-yv-ckc" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="mas-dy-r2E"/>
-                            <constraint firstItem="KmS-h8-H9w" firstAttribute="centerY" secondItem="mmh-bD-h1C" secondAttribute="centerY" multiplier="1.75" id="rfd-DC-hcV"/>
+                            <constraint firstItem="KmS-h8-H9w" firstAttribute="trailing" secondItem="mmh-bD-h1C" secondAttribute="trailing" id="tew-hz-MeM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1qk-NK-WUG" secondAttribute="trailing" constant="10" id="uSP-vz-te3"/>
+                            <constraint firstItem="F5b-9Q-qx9" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" multiplier="1.75" id="uSt-a7-Mq6"/>
+                            <constraint firstItem="1qk-NK-WUG" firstAttribute="top" secondItem="0EI-rx-5JG" secondAttribute="bottom" constant="10" id="wdx-bH-zS7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -377,23 +406,35 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FO8-nX-M0h">
-                                <rect key="frame" x="78" y="400" width="70" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="72" y="400" width="82" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPE-yW-uKR">
-                                <rect key="frame" x="255" y="400" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="248" y="400" width="104" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-Za-Gus">
-                                <rect key="frame" x="460" y="400" width="56" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="455" y="400" width="66" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwA-Sw-sg7" userLabel="Logout Icon">
+                                <rect key="frame" x="506" y="30" width="64" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="acR-65-ZbW" eventType="touchUpInside" id="7os-wr-iBG"/>
+                                    <action selector="logoutButtonPressed:" destination="LSd-UV-VWD" eventType="touchUpInside" id="8uk-lq-3sW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ntj-hu-tUr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -403,6 +444,7 @@
                             <constraint firstItem="3BC-60-UW9" firstAttribute="centerY" secondItem="dTo-YP-dXd" secondAttribute="centerY" id="AIa-tS-zy5"/>
                             <constraint firstItem="KPE-yW-uKR" firstAttribute="top" secondItem="dgu-Nc-sEP" secondAttribute="bottom" constant="25" id="D3g-EL-m7W"/>
                             <constraint firstItem="i6P-73-i7T" firstAttribute="centerY" secondItem="dTo-YP-dXd" secondAttribute="centerY" multiplier="0.3" id="GPx-D9-5WI"/>
+                            <constraint firstItem="hwA-Sw-sg7" firstAttribute="top" secondItem="GQz-64-Ves" secondAttribute="bottom" constant="10" id="Ll4-Ud-ndl"/>
                             <constraint firstAttribute="trailing" secondItem="FHW-HI-cP7" secondAttribute="trailing" id="OI0-uf-UHJ"/>
                             <constraint firstItem="FHW-HI-cP7" firstAttribute="top" secondItem="dTo-YP-dXd" secondAttribute="top" id="Ts1-i1-kHq"/>
                             <constraint firstItem="dgu-Nc-sEP" firstAttribute="width" secondItem="dTo-YP-dXd" secondAttribute="width" multiplier="0.25" id="YBq-lO-n85"/>
@@ -413,6 +455,7 @@
                             <constraint firstItem="3BC-60-UW9" firstAttribute="width" secondItem="dgu-Nc-sEP" secondAttribute="width" id="chW-Ac-0Nu"/>
                             <constraint firstItem="PdI-8m-1gj" firstAttribute="top" secondItem="FHW-HI-cP7" secondAttribute="bottom" id="iUX-cB-d8A"/>
                             <constraint firstItem="i6P-73-i7T" firstAttribute="centerX" secondItem="dTo-YP-dXd" secondAttribute="centerX" id="kkM-c6-EeW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hwA-Sw-sg7" secondAttribute="trailing" constant="10" id="lWQ-xt-0co"/>
                             <constraint firstItem="dgu-Nc-sEP" firstAttribute="centerX" secondItem="dTo-YP-dXd" secondAttribute="centerX" id="lm0-0t-T0p"/>
                             <constraint firstItem="dgu-Nc-sEP" firstAttribute="centerY" secondItem="dTo-YP-dXd" secondAttribute="centerY" id="m3B-Y2-Vxe"/>
                             <constraint firstItem="FO8-nX-M0h" firstAttribute="top" secondItem="tsK-2A-okD" secondAttribute="bottom" constant="25" id="oBW-2o-RhI"/>
@@ -670,7 +713,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Yj-rO-vt0" customClass="CustomScrollView" customModule="VotingApp" customModuleProvider="target">
                                 <rect key="frame" x="60" y="134" width="480" height="331"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="480" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -681,7 +724,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-Df-27Q" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-Df-27Q" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="42" width="480" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -695,7 +738,7 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="Dlg-Np-Kvi"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-Eu-rkP" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-Eu-rkP" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="480" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -709,7 +752,7 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="jue-hs-NAH"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw2-Mr-bgd" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw2-Mr-bgd" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="126" width="480" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -723,7 +766,7 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="TV4-eV-7QB"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-Ps-GcO" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-Ps-GcO" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="168" width="480" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -737,7 +780,7 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="iaY-hc-p9b"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h15-E5-Km2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h15-E5-Km2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="210" width="480" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -751,7 +794,7 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="C4f-qE-diQ"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-ks-g3L" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-ks-g3L" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="252" width="288" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -765,7 +808,7 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="h45-UN-CnN"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JD-okN" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JD-okN" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="293" y="252" width="187" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -776,7 +819,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-uM-UBQ" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-uM-UBQ" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="294" width="144" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -895,7 +938,7 @@
         <image name="results_icon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pQG-Wx-whr"/>
-        <segue reference="Tu3-3g-WQj"/>
+        <segue reference="4yZ-s2-3fF"/>
+        <segue reference="ntj-hu-tUr"/>
     </inferredMetricsTieBreakers>
 </document>

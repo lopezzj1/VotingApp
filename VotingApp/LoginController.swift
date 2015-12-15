@@ -81,9 +81,7 @@ class LoginController: UIViewController {
             textField.placeholder = "Email"
             textField.keyboardType = .EmailAddress
         }
-        //let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         requestAlertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-        //let requestAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: nil)
         requestAlertController.addAction(UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(requestAlertController, animated: true, completion: nil)
     }
