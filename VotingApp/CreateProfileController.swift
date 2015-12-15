@@ -44,7 +44,7 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         self.navigationController?.navigationBar.hidden = true;
         stateTextField.inputView = picker
         
-        picker = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
+        picker = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 200))
         picker.backgroundColor = .whiteColor()
         
         picker.showsSelectionIndicator = true
@@ -178,13 +178,13 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        if (textField == addressTextField || textField == cityTextField || textField == zipcodeTextField) {
+        if (textField == addressTextField || textField == cityTextField || textField == zipcodeTextField || textField == stateTextField) {
             scrollView.setContentOffset(CGPointMake(0, 100), animated: true)
         }
     }
     
     func textFieldDidEndEditing(textField : UITextField) {
-        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+        scrollView.setContentOffset(CGPointMake(0, -20), animated: true)
     }
 
     
