@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZWP-Od-fdg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZWP-Od-fdg">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -309,27 +309,15 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-h8-H9w">
-                                <rect key="frame" x="348" y="508" width="192" height="34"/>
+                                <rect key="frame" x="382" y="508" width="158" height="34"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.12941176469999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Submit Changes">
+                                <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="LSd-UV-VWD" eventType="touchUpInside" id="JE7-aE-UCf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5b-9Q-qx9">
-                                <rect key="frame" x="60" y="508" width="192" height="34"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Go Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="acR-65-ZbW" kind="show" id="4yZ-s2-3fF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-NK-WUG" userLabel="Logout Icon">
@@ -342,6 +330,18 @@
                                 <connections>
                                     <action selector="logoutButtonPressed:" destination="LSd-UV-VWD" eventType="touchUpInside" id="fx7-8S-eZ4"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="fGG-Jf-Za4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5b-9Q-qx9">
+                                <rect key="frame" x="60" y="508" width="158" height="34"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="acR-65-ZbW" kind="show" id="4yZ-s2-3fF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -358,7 +358,7 @@
                             <constraint firstItem="mmh-bD-h1C" firstAttribute="width" secondItem="4ij-Jd-cHR" secondAttribute="width" multiplier="0.8" id="Jz8-op-wWV"/>
                             <constraint firstItem="mmh-bD-h1C" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="K7G-pc-m8F"/>
                             <constraint firstItem="A45-yv-ckc" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" multiplier="0.25" id="N4t-sT-DXJ"/>
-                            <constraint firstItem="KmS-h8-H9w" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" multiplier="0.4" id="YEI-iv-APA"/>
+                            <constraint firstItem="KmS-h8-H9w" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" multiplier="0.33" id="YEI-iv-APA"/>
                             <constraint firstItem="iXD-n9-pgh" firstAttribute="top" secondItem="4ij-Jd-cHR" secondAttribute="top" id="Zfd-J9-GGz"/>
                             <constraint firstItem="mmh-bD-h1C" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" id="do7-uH-Jym"/>
                             <constraint firstItem="A45-yv-ckc" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="mas-dy-r2E"/>
@@ -1054,7 +1054,7 @@
         <image name="results_icon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ctp-oU-Zjk"/>
-        <segue reference="Tu3-3g-WQj"/>
+        <segue reference="4yZ-s2-3fF"/>
+        <segue reference="fGG-Jf-Za4"/>
     </inferredMetricsTieBreakers>
 </document>

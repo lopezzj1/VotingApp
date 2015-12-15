@@ -31,6 +31,7 @@ class LoginController: UIViewController {
         let currentUser = PFUser.currentUser()
         
         if currentUser != nil {
+            nav.cachedUser = currentUser
             self.performSegueWithIdentifier("loginSegue", sender: nil)
         } else {
             //print("error")
