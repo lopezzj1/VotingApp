@@ -22,8 +22,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag_background" translatesAutoresizingMaskIntoConstraints="NO" id="BjD-17-jnh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pJ-I3-ORr" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                <rect key="frame" x="76" y="252" width="450" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pJ-I3-ORr" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="76" y="259" width="450" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
@@ -33,8 +33,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6x-oX-3ES" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                <rect key="frame" x="76" y="299" width="450" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6x-oX-3ES" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="76" y="306" width="450" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -56,22 +56,19 @@
                                 <state key="normal" title="Forgot password?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="forgotPasswordPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Xh-Ws-gVC"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-Mz-8Zm">
-                                <rect key="frame" x="131" y="406" width="338" height="32"/>
-                                <color key="backgroundColor" red="0.070588235294117646" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Create Profile">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-fp-o2U">
+                                <rect key="frame" x="131" y="378" width="338" height="32"/>
+                                <color key="backgroundColor" red="0.74509803921568629" green="0.12941176470588234" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="63t-l1-yaW" kind="show" id="rUc-ge-QTz"/>
+                                    <action selector="loginButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6w9-Lr-M1X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RED-3c-DFA">
-                                <rect key="frame" x="237" y="197" width="127" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RED-3c-DFA">
+                                <rect key="frame" x="237" y="204" width="127" height="40"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Auto-Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,14 +77,14 @@
                                     <segue destination="acR-65-ZbW" kind="show" id="D0h-cy-gom"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-fp-o2U">
-                                <rect key="frame" x="131" y="371" width="338" height="32"/>
-                                <color key="backgroundColor" red="0.74509803921568629" green="0.12941176470588234" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Login">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-Mz-8Zm">
+                                <rect key="frame" x="131" y="413" width="338" height="32"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.14509803921568626" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create Profile">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6w9-Lr-M1X"/>
+                                    <segue destination="63t-l1-yaW" kind="show" id="rUc-ge-QTz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,181 +148,134 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colored_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="iXD-n9-pgh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A45-yv-ckc">
-                                <rect key="frame" x="236" y="60" width="129" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7e-K9-gXX" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="157" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLJ-YF-nXg" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="213" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="An8-mB-hyf" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="265" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxn-6G-e8o" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="316" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-YS-xb5" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="367" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWO-Hy-dZa" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="415" width="161" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-KP-5Ut" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="465" width="81" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="baw-s0-zP4" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="350" y="415" width="86" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-h8-H9w">
+                                <rect key="frame" x="244" y="527" width="113" height="30"/>
+                                <state key="normal" title="Submit Changes"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A45-yv-ckc">
+                                <rect key="frame" x="236" y="45" width="129" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-h8-H9w">
-                                <rect key="frame" x="180" y="507" width="240" height="34"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Submit Changes">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitButtonPressed:" destination="LSd-UV-VWD" eventType="touchUpInside" id="JE7-aE-UCf"/>
-                                </connections>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mmh-bD-h1C">
-                                <rect key="frame" x="60" y="134" width="480" height="331"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Gt-66Y" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="480" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7e-K9-gXX" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="42" width="480" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLJ-YF-nXg" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="480" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="An8-mB-hyf" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="126" width="480" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxn-6G-e8o" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="168" width="480" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-YS-xb5" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="480" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWO-Hy-dZa" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="252" width="288" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="baw-s0-zP4" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="293" y="252" width="187" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-KP-5Ut" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="294" width="144" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="MKL-KP-5Ut" firstAttribute="top" secondItem="fWO-Hy-dZa" secondAttribute="bottom" constant="5" id="3Cu-lm-nIn"/>
-                                    <constraint firstItem="MKL-KP-5Ut" firstAttribute="leading" secondItem="Vx6-YS-xb5" secondAttribute="leading" id="5jj-l9-faz"/>
-                                    <constraint firstItem="Xxn-6G-e8o" firstAttribute="top" secondItem="An8-mB-hyf" secondAttribute="bottom" constant="5" id="81m-0w-ObQ"/>
-                                    <constraint firstItem="MKL-KP-5Ut" firstAttribute="width" secondItem="fWO-Hy-dZa" secondAttribute="width" multiplier="0.5" id="Cok-qI-vM1"/>
-                                    <constraint firstItem="baw-s0-zP4" firstAttribute="leading" secondItem="fWO-Hy-dZa" secondAttribute="trailing" constant="5" id="HkI-52-Gfd"/>
-                                    <constraint firstItem="An8-mB-hyf" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" id="IUO-c5-Cqz"/>
-                                    <constraint firstItem="Vx6-YS-xb5" firstAttribute="top" secondItem="Xxn-6G-e8o" secondAttribute="bottom" constant="5" id="KvQ-Ja-MXp"/>
-                                    <constraint firstItem="LLJ-YF-nXg" firstAttribute="top" secondItem="D7e-K9-gXX" secondAttribute="bottom" constant="5" id="Qcc-1M-ofp"/>
-                                    <constraint firstItem="LLJ-YF-nXg" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" id="RB1-xT-7kh"/>
-                                    <constraint firstItem="baw-s0-zP4" firstAttribute="trailing" secondItem="Vx6-YS-xb5" secondAttribute="trailing" id="RGY-xJ-QL0"/>
-                                    <constraint firstItem="fWO-Hy-dZa" firstAttribute="top" secondItem="Vx6-YS-xb5" secondAttribute="bottom" constant="5" id="RzD-MQ-HsX"/>
-                                    <constraint firstItem="0vN-Gt-66Y" firstAttribute="width" secondItem="mmh-bD-h1C" secondAttribute="width" id="Un8-sE-R7u"/>
-                                    <constraint firstItem="D7e-K9-gXX" firstAttribute="top" secondItem="0vN-Gt-66Y" secondAttribute="bottom" constant="5" id="Vph-dc-C33"/>
-                                    <constraint firstItem="fWO-Hy-dZa" firstAttribute="width" secondItem="Vx6-YS-xb5" secondAttribute="width" multiplier="0.6" id="W7o-yM-rd4"/>
-                                    <constraint firstItem="fWO-Hy-dZa" firstAttribute="leading" secondItem="Vx6-YS-xb5" secondAttribute="leading" id="WtS-Dx-e2y"/>
-                                    <constraint firstItem="Xxn-6G-e8o" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" id="Xnq-fr-JQ6"/>
-                                    <constraint firstItem="0vN-Gt-66Y" firstAttribute="top" secondItem="mmh-bD-h1C" secondAttribute="top" id="Y2x-IK-RR4"/>
-                                    <constraint firstItem="MKL-KP-5Ut" firstAttribute="height" secondItem="0vN-Gt-66Y" secondAttribute="height" id="bdl-0y-iuU"/>
-                                    <constraint firstItem="D7e-K9-gXX" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" id="cK9-Kk-RyW"/>
-                                    <constraint firstItem="baw-s0-zP4" firstAttribute="top" secondItem="Vx6-YS-xb5" secondAttribute="bottom" constant="5" id="d68-yu-t8y"/>
-                                    <constraint firstItem="Vx6-YS-xb5" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" id="euw-7m-BvB"/>
-                                    <constraint firstItem="An8-mB-hyf" firstAttribute="top" secondItem="LLJ-YF-nXg" secondAttribute="bottom" constant="5" id="jnM-Kd-HLR"/>
-                                </constraints>
-                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Gt-66Y" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                <rect key="frame" x="165" y="104" width="271" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KmS-h8-H9w" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="32l-73-iuC"/>
+                            <constraint firstItem="D7e-K9-gXX" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="4PK-jo-UHY"/>
+                            <constraint firstItem="MKL-KP-5Ut" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="7yF-ho-VEq"/>
+                            <constraint firstItem="Vx6-YS-xb5" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="8uf-cO-m9y"/>
                             <constraint firstAttribute="trailing" secondItem="iXD-n9-pgh" secondAttribute="trailing" id="C2d-Ic-y7h"/>
                             <constraint firstItem="iXD-n9-pgh" firstAttribute="leading" secondItem="4ij-Jd-cHR" secondAttribute="leading" id="FhV-I4-BTO"/>
                             <constraint firstItem="yB9-fY-TBh" firstAttribute="top" secondItem="iXD-n9-pgh" secondAttribute="bottom" id="GoJ-S2-Vfl"/>
-                            <constraint firstItem="mmh-bD-h1C" firstAttribute="width" secondItem="4ij-Jd-cHR" secondAttribute="width" multiplier="0.8" id="Jz8-op-wWV"/>
-                            <constraint firstItem="mmh-bD-h1C" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="K7G-pc-m8F"/>
-                            <constraint firstItem="A45-yv-ckc" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" multiplier="0.25" id="N4t-sT-DXJ"/>
-                            <constraint firstItem="KmS-h8-H9w" firstAttribute="width" secondItem="0vN-Gt-66Y" secondAttribute="width" multiplier="0.5" id="YEI-iv-APA"/>
+                            <constraint firstItem="A45-yv-ckc" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" multiplier="0.3" id="N4t-sT-DXJ"/>
+                            <constraint firstItem="0vN-Gt-66Y" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="R1F-0c-Obt"/>
+                            <constraint firstItem="LLJ-YF-nXg" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="YD3-qu-avC"/>
                             <constraint firstItem="iXD-n9-pgh" firstAttribute="top" secondItem="4ij-Jd-cHR" secondAttribute="top" id="Zfd-J9-GGz"/>
-                            <constraint firstItem="mmh-bD-h1C" firstAttribute="centerY" secondItem="4ij-Jd-cHR" secondAttribute="centerY" id="do7-uH-Jym"/>
+                            <constraint firstItem="An8-mB-hyf" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="iz3-FG-HkK"/>
                             <constraint firstItem="A45-yv-ckc" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="mas-dy-r2E"/>
-                            <constraint firstItem="KmS-h8-H9w" firstAttribute="centerY" secondItem="mmh-bD-h1C" secondAttribute="centerY" multiplier="1.75" id="rfd-DC-hcV"/>
+                            <constraint firstItem="Xxn-6G-e8o" firstAttribute="centerX" secondItem="4ij-Jd-cHR" secondAttribute="centerX" id="yj1-c1-QJl"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="addressTextField" destination="Vx6-YS-xb5" id="f4N-Md-bg5"/>
-                        <outlet property="cityTextField" destination="fWO-Hy-dZa" id="wUX-Yt-I8w"/>
-                        <outlet property="confirmPasswordTextField" destination="Xxn-6G-e8o" id="lmB-8k-l9u"/>
-                        <outlet property="emailTextField" destination="LLJ-YF-nXg" id="EtF-Uu-IlL"/>
-                        <outlet property="firstNameTextField" destination="0vN-Gt-66Y" id="iPv-ad-hi5"/>
-                        <outlet property="lastNameTextField" destination="D7e-K9-gXX" id="7I6-dA-tW1"/>
-                        <outlet property="passwordTextField" destination="An8-mB-hyf" id="67P-0S-rI3"/>
-                        <outlet property="scrollView" destination="mmh-bD-h1C" id="azR-vn-qR0"/>
-                        <outlet property="stateTextField" destination="baw-s0-zP4" id="rD1-6g-HuE"/>
-                        <outlet property="zipcodeTextField" destination="MKL-KP-5Ut" id="Pw1-wv-NdK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsm-HB-ekr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -554,31 +504,13 @@
                                 <rect key="frame" x="20" y="139" width="560" height="355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="options" id="7Q9-OU-AxA" customClass="CandidateCell" customModule="VotingApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="options" id="7Q9-OU-AxA">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Q9-OU-AxA" id="f4E-NI-MW3">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRB-ih-7Hp">
-                                                    <rect key="frame" x="8" y="11" width="59" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrI-Qx-eB8">
-                                                    <rect key="frame" x="109" y="7" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="cellButtonPress:" destination="UlA-pz-4fi" eventType="touchUpInside" id="TrM-7I-8Zc"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="nameLabel" destination="XRB-ih-7Hp" id="pYp-KV-3ht"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -593,32 +525,11 @@
                         <outlet property="ballotOptions" destination="Woz-Bw-9Lv" id="8Zg-gk-xUB"/>
                         <outlet property="tableView" destination="Woz-Bw-9Lv" id="aQy-In-kDi"/>
                         <outlet property="voteButton" destination="bIB-qh-PeJ" id="LIh-gb-ago"/>
-                        <segue destination="YsN-Ww-XfP" kind="popoverPresentation" identifier="showCandidateDetailSegue" id="qvj-vb-xm7">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KJ-Wf-Hf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3957" y="1330"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="kTM-zd-0Lt">
-            <objects>
-                <viewController id="YsN-Ww-XfP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pbX-vM-PYC"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Ae-7x-ox1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ORg-N7-h5w">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQq-p5-WT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3957" y="2063"/>
         </scene>
         <!--Results Table Controller-->
         <scene sceneID="hN9-OG-6w7">
@@ -629,13 +540,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultTableCellIdentifier" id="WcS-Vn-gcO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WcS-Vn-gcO">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WcS-Vn-gcO" id="JMs-pI-5Yd">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ilm-Kj-1Bg" kind="show" identifier="resultsViewSegue" id="aXc-eh-nJb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -643,9 +557,6 @@
                             <outlet property="delegate" destination="hvc-bB-tlO" id="CTT-dC-mk3"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="ilm-Kj-1Bg" kind="show" identifier="resultsViewSegue" id="8Vc-cF-BwQ"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21P-1m-N5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -681,50 +592,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-aE-OcZ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Yj-rO-vt0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create A Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcT-jh-y7A">
-                                <rect key="frame" x="214" y="60" width="172" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7U-lH-V8v">
-                                <rect key="frame" x="382" y="508" width="158" height="34"/>
-                                <color key="backgroundColor" red="0.63921568630000003" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitButtonPressed:" destination="63t-l1-yaW" eventType="touchUpInside" id="qKl-c6-P1e"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-kX-wOL">
-                                <rect key="frame" x="60" y="508" width="158" height="34"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Tu3-3g-WQj"/>
-                                </connections>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Yj-rO-vt0" customClass="CustomScrollView" customModule="VotingApp" customModuleProvider="target">
-                                <rect key="frame" x="60" y="134" width="480" height="331"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="480" height="37"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-aE-OcZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="632"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create A Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcT-jh-y7A">
+                                        <rect key="frame" x="214" y="36" width="172" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-Df-27Q" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="151" width="480" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-Df-27Q" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="42" width="480" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                                 <real key="value" value="10"/>
@@ -734,8 +618,8 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="Dlg-Np-Kvi"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-Eu-rkP" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="480" height="37"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-Eu-rkP" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="201" width="480" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -748,8 +632,8 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="jue-hs-NAH"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw2-Mr-bgd" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="126" width="480" height="37"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw2-Mr-bgd" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="251" width="480" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -762,8 +646,8 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="TV4-eV-7QB"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-Ps-GcO" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="168" width="480" height="37"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-Ps-GcO" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="301" width="480" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -776,8 +660,8 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="iaY-hc-p9b"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h15-E5-Km2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="480" height="37"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h15-E5-Km2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="351" width="480" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -790,8 +674,8 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="C4f-qE-diQ"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-ks-g3L" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="252" width="288" height="37"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-ks-g3L" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="401" width="360" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -804,22 +688,11 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="h45-UN-CnN"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JD-okN" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="293" y="252" width="187" height="37"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-uM-UBQ" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="451" width="180" height="42"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zipcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-uM-UBQ" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="294" width="144" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                                 <real key="value" value="10"/>
@@ -829,63 +702,53 @@
                                             <outlet property="delegate" destination="63t-l1-yaW" id="X0w-Zr-TLk"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-kX-wOL">
+                                        <rect key="frame" x="34" y="539" width="158" height="34"/>
+                                        <color key="backgroundColor" red="0.070588235289999995" green="0.1450980392" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="Tu3-3g-WQj"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-wF-AE2" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="101" width="480" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-JD-okN" customClass="CustomUITextField" customModule="VotingApp" customModuleProvider="target">
+                                        <rect key="frame" x="248" y="451" width="117" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="5vB-Df-27Q" firstAttribute="height" secondItem="PkO-wF-AE2" secondAttribute="height" id="5bV-R5-9Rd"/>
-                                    <constraint firstItem="5vB-Df-27Q" firstAttribute="width" secondItem="PkO-wF-AE2" secondAttribute="width" id="8Gb-jg-Nas"/>
-                                    <constraint firstItem="5G4-JD-okN" firstAttribute="trailing" secondItem="h15-E5-Km2" secondAttribute="trailing" id="I2s-xv-2QL"/>
-                                    <constraint firstItem="lhy-uM-UBQ" firstAttribute="top" secondItem="5G4-JD-okN" secondAttribute="bottom" constant="5" id="IER-uz-Gmm"/>
-                                    <constraint firstItem="bM1-ks-g3L" firstAttribute="width" secondItem="h15-E5-Km2" secondAttribute="width" multiplier="0.6" id="L2z-0v-Bhb"/>
-                                    <constraint firstItem="5G4-JD-okN" firstAttribute="leading" secondItem="bM1-ks-g3L" secondAttribute="trailing" constant="5" id="NqY-01-y2z"/>
-                                    <constraint firstItem="u2U-Eu-rkP" firstAttribute="centerX" secondItem="9Yj-rO-vt0" secondAttribute="centerX" id="OVj-S9-Uc8"/>
-                                    <constraint firstItem="bM1-ks-g3L" firstAttribute="top" secondItem="h15-E5-Km2" secondAttribute="bottom" constant="5" id="Ojh-7Q-MN1"/>
-                                    <constraint firstItem="Mkv-Ps-GcO" firstAttribute="width" secondItem="PkO-wF-AE2" secondAttribute="width" id="Sn2-1L-Yrv"/>
-                                    <constraint firstItem="jw2-Mr-bgd" firstAttribute="centerX" secondItem="9Yj-rO-vt0" secondAttribute="centerX" id="W5e-Vh-IPQ"/>
-                                    <constraint firstItem="h15-E5-Km2" firstAttribute="width" secondItem="PkO-wF-AE2" secondAttribute="width" id="a9t-XZ-Fq9"/>
-                                    <constraint firstItem="bM1-ks-g3L" firstAttribute="leading" secondItem="h15-E5-Km2" secondAttribute="leading" id="bml-Ub-3jv"/>
-                                    <constraint firstItem="lhy-uM-UBQ" firstAttribute="leading" secondItem="h15-E5-Km2" secondAttribute="leading" id="cX4-jB-R6S"/>
-                                    <constraint firstItem="jw2-Mr-bgd" firstAttribute="height" secondItem="PkO-wF-AE2" secondAttribute="height" id="eK9-EJ-8iR"/>
-                                    <constraint firstItem="5G4-JD-okN" firstAttribute="height" secondItem="PkO-wF-AE2" secondAttribute="height" id="eSC-BC-fc8"/>
-                                    <constraint firstItem="h15-E5-Km2" firstAttribute="centerX" secondItem="9Yj-rO-vt0" secondAttribute="centerX" id="eUX-Ba-XzX"/>
-                                    <constraint firstItem="u2U-Eu-rkP" firstAttribute="width" secondItem="PkO-wF-AE2" secondAttribute="width" id="et3-SX-nol"/>
-                                    <constraint firstItem="h15-E5-Km2" firstAttribute="height" secondItem="PkO-wF-AE2" secondAttribute="height" id="fwX-n3-bHc"/>
-                                    <constraint firstItem="jw2-Mr-bgd" firstAttribute="top" secondItem="u2U-Eu-rkP" secondAttribute="bottom" constant="5" id="fzB-tS-u5w"/>
-                                    <constraint firstItem="5vB-Df-27Q" firstAttribute="top" secondItem="PkO-wF-AE2" secondAttribute="bottom" constant="5" id="grl-f2-y0R"/>
-                                    <constraint firstItem="5G4-JD-okN" firstAttribute="top" secondItem="h15-E5-Km2" secondAttribute="bottom" constant="5" id="iB7-B6-CnW"/>
-                                    <constraint firstItem="Mkv-Ps-GcO" firstAttribute="top" secondItem="jw2-Mr-bgd" secondAttribute="bottom" constant="5" id="o68-eA-wix"/>
-                                    <constraint firstItem="Mkv-Ps-GcO" firstAttribute="height" secondItem="PkO-wF-AE2" secondAttribute="height" id="q70-Ib-5S6"/>
-                                    <constraint firstItem="Mkv-Ps-GcO" firstAttribute="centerX" secondItem="9Yj-rO-vt0" secondAttribute="centerX" id="r8B-3s-XNh"/>
-                                    <constraint firstItem="u2U-Eu-rkP" firstAttribute="height" secondItem="PkO-wF-AE2" secondAttribute="height" id="s5d-5y-pmd"/>
-                                    <constraint firstItem="PkO-wF-AE2" firstAttribute="centerX" secondItem="9Yj-rO-vt0" secondAttribute="centerX" id="tSj-Hc-tMT"/>
-                                    <constraint firstItem="PkO-wF-AE2" firstAttribute="top" secondItem="9Yj-rO-vt0" secondAttribute="top" id="vLH-M8-EPY"/>
-                                    <constraint firstItem="h15-E5-Km2" firstAttribute="top" secondItem="Mkv-Ps-GcO" secondAttribute="bottom" constant="5" id="vMX-Au-gjB"/>
-                                    <constraint firstItem="jw2-Mr-bgd" firstAttribute="width" secondItem="PkO-wF-AE2" secondAttribute="width" id="wE7-A5-OxZ"/>
-                                    <constraint firstItem="u2U-Eu-rkP" firstAttribute="top" secondItem="5vB-Df-27Q" secondAttribute="bottom" constant="5" id="x3u-vT-kWf"/>
-                                    <constraint firstItem="lhy-uM-UBQ" firstAttribute="height" secondItem="PkO-wF-AE2" secondAttribute="height" id="xq6-vj-Pjk"/>
-                                    <constraint firstItem="PkO-wF-AE2" firstAttribute="width" secondItem="9Yj-rO-vt0" secondAttribute="width" id="y4y-3g-hyU"/>
-                                    <constraint firstItem="bM1-ks-g3L" firstAttribute="height" secondItem="PkO-wF-AE2" secondAttribute="height" id="ynm-p5-hrl"/>
-                                    <constraint firstItem="5vB-Df-27Q" firstAttribute="centerX" secondItem="9Yj-rO-vt0" secondAttribute="centerX" id="z1q-d3-2aw"/>
-                                    <constraint firstItem="lhy-uM-UBQ" firstAttribute="width" secondItem="bM1-ks-g3L" secondAttribute="width" multiplier="0.5" id="zEX-4V-uaf"/>
-                                </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7U-lH-V8v">
+                                <rect key="frame" x="215" y="539" width="158" height="34"/>
+                                <color key="backgroundColor" red="0.63921568630000003" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="63t-l1-yaW" eventType="touchUpInside" id="qKl-c6-P1e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="W7U-lH-V8v" firstAttribute="trailing" secondItem="9Yj-rO-vt0" secondAttribute="trailing" id="1XA-4f-8a1"/>
-                            <constraint firstAttribute="trailing" secondItem="EwZ-aE-OcZ" secondAttribute="trailing" id="3wm-3s-Kba"/>
-                            <constraint firstItem="nKE-kX-wOL" firstAttribute="centerY" secondItem="ysq-YO-TmQ" secondAttribute="centerY" multiplier="1.75" id="6DS-wm-oOE"/>
-                            <constraint firstItem="nKE-kX-wOL" firstAttribute="width" secondItem="PkO-wF-AE2" secondAttribute="width" multiplier="0.33" id="9hB-WH-fks"/>
-                            <constraint firstItem="GcT-jh-y7A" firstAttribute="centerX" secondItem="ysq-YO-TmQ" secondAttribute="centerX" id="Br5-bz-c5Z"/>
-                            <constraint firstItem="9Yj-rO-vt0" firstAttribute="centerY" secondItem="ysq-YO-TmQ" secondAttribute="centerY" id="Gwa-zt-asP"/>
-                            <constraint firstItem="GcT-jh-y7A" firstAttribute="centerY" secondItem="ysq-YO-TmQ" secondAttribute="centerY" multiplier="0.25" id="JCM-qs-hfl"/>
-                            <constraint firstItem="nKE-kX-wOL" firstAttribute="leading" secondItem="9Yj-rO-vt0" secondAttribute="leading" id="JbB-ER-jcN"/>
-                            <constraint firstItem="EwZ-aE-OcZ" firstAttribute="top" secondItem="ysq-YO-TmQ" secondAttribute="top" id="L3P-rM-2iE"/>
+                            <constraint firstItem="9Yj-rO-vt0" firstAttribute="centerY" secondItem="ysq-YO-TmQ" secondAttribute="centerY" id="AMw-du-lcW"/>
+                            <constraint firstItem="9Yj-rO-vt0" firstAttribute="height" secondItem="ysq-YO-TmQ" secondAttribute="height" id="HXV-fS-wac"/>
+                            <constraint firstItem="9Yj-rO-vt0" firstAttribute="width" secondItem="ysq-YO-TmQ" secondAttribute="width" id="LXA-L6-9gk"/>
                             <constraint firstItem="9Yj-rO-vt0" firstAttribute="centerX" secondItem="ysq-YO-TmQ" secondAttribute="centerX" id="SFM-Eb-m9C"/>
-                            <constraint firstItem="W7U-lH-V8v" firstAttribute="width" secondItem="nKE-kX-wOL" secondAttribute="width" id="odY-Up-Det"/>
-                            <constraint firstItem="9Yj-rO-vt0" firstAttribute="width" secondItem="ysq-YO-TmQ" secondAttribute="width" multiplier="0.8" id="qR8-ru-3ES"/>
-                            <constraint firstItem="QQm-fl-UvF" firstAttribute="top" secondItem="EwZ-aE-OcZ" secondAttribute="bottom" id="vaF-RD-VaI"/>
-                            <constraint firstItem="EwZ-aE-OcZ" firstAttribute="leading" secondItem="ysq-YO-TmQ" secondAttribute="leading" id="vw0-NC-h49"/>
-                            <constraint firstItem="W7U-lH-V8v" firstAttribute="centerY" secondItem="ysq-YO-TmQ" secondAttribute="centerY" multiplier="1.75" id="zW3-se-cfU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -898,6 +761,7 @@
                         <outlet property="passwordTextField" destination="jw2-Mr-bgd" id="FDn-gI-tcI"/>
                         <outlet property="scrollView" destination="9Yj-rO-vt0" id="GfZ-xt-b1X"/>
                         <outlet property="stateTextField" destination="5G4-JD-okN" id="Crb-pY-g1W"/>
+                        <outlet property="submitButton" destination="W7U-lH-V8v" id="cpc-LS-lBp"/>
                         <outlet property="zipcodeTextField" destination="lhy-uM-UBQ" id="Rwu-NK-AKG"/>
                         <segue destination="acR-65-ZbW" kind="show" identifier="createProfileToMenuSegue" id="Ctp-oU-Zjk"/>
                     </connections>
@@ -934,7 +798,7 @@
         <image name="results_icon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pQG-Wx-whr"/>
+        <segue reference="Ctp-oU-Zjk"/>
         <segue reference="Tu3-3g-WQj"/>
     </inferredMetricsTieBreakers>
 </document>
