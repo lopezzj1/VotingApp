@@ -29,11 +29,12 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func viewWillAppear(animated: Bool) {
+        let nav: HackyNavController = self.navigationController as! HackyNavController
         if var measure = self.measure {
-            if measure.candidates == nil {
-                let nav: HackyNavController = self.navigationController as! HackyNavController
+            if nav.cachedBallot?.measures![measure.parseObjId]?.candidates == nil { //NO CACHED DATA GET SOME
                 measure.candidatesRelation.query().findObjectsInBackgroundWithBlock {
                     (objects: [PFObject]?, error: NSError?) -> Void in
+                    NSLog("getting candidates from net")
                     if let candidates = objects {
                         measure.candidates = [String: Candidate]()
                         self.candidates = [Candidate]()
@@ -57,6 +58,12 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                         //shit this wasn't supposed to happen there are no answers for this ballot
                         NSLog("BAD DATA NO CANDIDATES")
                     }
+                }
+            } else { //DATA WAS CACHED DON'T TOUCH THE NETWORK
+                self.measure!.candidates = nav.cachedBallot?.measures![measure.parseObjId]?.candidates
+                self.candidates = [Candidate]()
+                for (_,candidate) in self.measure!.candidates! {
+                    self.candidates!.append(candidate)
                 }
             }
         }else {
