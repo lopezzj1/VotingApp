@@ -15,6 +15,8 @@ class HackyNavController: UINavigationController {
     
     var cachedUser: PFUser? = nil
     
+    var cachedResults: [Ballot]? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
