@@ -152,8 +152,8 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     
     @IBAction func cellButtonPress(sender: AnyObject) {
         let button = sender as! UIButton
-        let cell = button.superview as! CandidateCell
-        self.performSegueWithIdentifier("showCandidateDetailSegue", sender: cell)
+        let cellView = button.superview?.superview as! UITableViewCell
+        self.performSegueWithIdentifier("showCandidateDetailSegue", sender: cellView)
     }
     
     override func didReceiveMemoryWarning() {

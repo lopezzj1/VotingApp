@@ -12,8 +12,15 @@ class CandidateDetailController: UIViewController {
     
     var candidate: Candidate? = nil
 
+    @IBOutlet weak var testLabel: UILabel!
+    
+    @IBAction func dismiss(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        testLabel.text = candidate?.name
 
         // Do any additional setup after loading the view.
     }
@@ -23,7 +30,6 @@ class CandidateDetailController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -33,5 +39,4 @@ class CandidateDetailController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
