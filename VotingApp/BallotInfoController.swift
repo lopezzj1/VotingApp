@@ -62,7 +62,6 @@ class BallotInfoController: UIViewController {
             
         }
         
-        
     }
     
     override func viewWillAppear(animated: Bool) {

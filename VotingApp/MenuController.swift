@@ -65,6 +65,7 @@ class MenuController: UIViewController {
                 }
             }
         }
+        self.navigationController?.navigationBar.hidden = true;
     }
 
     override func didReceiveMemoryWarning() {

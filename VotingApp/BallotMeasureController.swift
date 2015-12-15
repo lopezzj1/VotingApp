@@ -70,6 +70,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
             //SOMETHING BAD HAPPEND THERE IS NO MEASURE
             NSLog("THERE WAS NO MEASURE, THIS SHOULD NOT BE POSSIBLE")
         }
+        tableView.tableFooterView = UIView()
     }
     
     func updateTable() {
@@ -83,7 +84,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
             //cell.titleLabel.text = candidates[indexPath.row].title
             cell.textLabel?.text = candidates[indexPath.row].name
         }
-        
+        cell.textLabel?.textColor = UIColor.whiteColor()
         return cell
     }
     
