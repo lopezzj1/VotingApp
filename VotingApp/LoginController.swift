@@ -31,18 +31,9 @@ class LoginController: UIViewController {
         let currentUser = PFUser.currentUser()
         
         if currentUser != nil {
-            PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!) {
-                
-                (user: PFUser?, error: NSError?) -> Void in
-                
-                if user != nil {
-                    print("succes!")
-                    self.performSegueWithIdentifier("loginSegue", sender: nil)
-                    nav.cachedUser = user
-                }
-            }
+            self.performSegueWithIdentifier("loginSegue", sender: nil)
         } else {
-            print("error")
+            //print("error")
         }
         
         

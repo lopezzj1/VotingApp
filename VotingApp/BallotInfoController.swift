@@ -1,3 +1,4 @@
+
 //
 //  BallotInfoController.swift
 //  VotingApp
@@ -13,9 +14,9 @@ import Parse
 class BallotInfoController: UIViewController {
 
     @IBOutlet weak var startVoteButton: UIButton!
-    @IBOutlet weak var ballotInfo: UILabel!
     @IBOutlet weak var ballotTitle: UILabel!
     @IBOutlet weak var closingDate: UILabel!
+    @IBOutlet weak var ballotInformation: UITextView!
     
     var ballot: Ballot? = nil
     var measures: [Measure]? = nil
@@ -60,6 +61,8 @@ class BallotInfoController: UIViewController {
             }
             
         }
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -70,11 +73,15 @@ class BallotInfoController: UIViewController {
         // Don't try this unless it's loaded, otherwise it will attempt to unwrap optional UI Elements
         if self.isViewLoaded() {
             if let b = self.ballot {
-                self.ballotInfo.text = b.desc
+                self.ballotInformation.text = b.desc
                 self.ballotTitle.text = b.title
                 self.closingDate.text = b.closingDate.description
             }
         }
+        self.ballotInformation.font = UIFont(name: (ballotTitle.font?.fontName)!, size: 17)
+        self.ballotInformation.textColor = UIColor.whiteColor()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
