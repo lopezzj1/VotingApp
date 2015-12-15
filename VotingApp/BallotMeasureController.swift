@@ -104,15 +104,16 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                     ballotResponseQuery.findObjectsInBackgroundWithBlock {
                         (objects: [PFObject]?, error: NSError?) -> Void in
                         if let objects = objects {
+                            let candidate = PFObject.init(withoutDataWithClassName: "candidates", objectId: candidate.parseObjId)
                             if objects.count > 0 { //update old vote
                                 ballotResponse = objects[0]
-                                ballotResponse!["candidate"] = PFObject.init(withoutDataWithClassName: "candidates", objectId: candidate.parseObjId)
-                                ballotResponse!["user"] = PFObject.init(withoutDataWithClassName: "_User", objectId: user.objectId!)
+                                ballotResponse!["candidate"] = candidate
+                                ballotResponse!["user"] = user
                             } else { // new vote
                                 ballotResponse = PFObject(className:"ballotResponse")
-                                ballotResponse!["measure"] = PFObject.init(withoutDataWithClassName: "candidateMeasure", objectId: self.measure!.parseObjId)
-                                ballotResponse!["user"] = PFObject.init(withoutDataWithClassName: "_User", objectId: user.objectId!)
-                                ballotResponse!["candidate"] = PFObject.init(withoutDataWithClassName: "candidates", objectId: candidate.parseObjId)
+                                ballotResponse!["measure"] = measure
+                                ballotResponse!["user"] = user
+                                ballotResponse!["candidate"] = candidate
                             }
                         } else { //error
 
