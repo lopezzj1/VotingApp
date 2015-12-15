@@ -29,8 +29,6 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
 
     @IBOutlet weak var zipcodeTextField: UITextField!
 
-    @IBOutlet weak var submitButton: UIButton!
-
     @IBOutlet weak var scrollView: UIScrollView!
     
     var picker = UIPickerView()
@@ -56,6 +54,7 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+        addressTextField.delegate = self
         cityTextField.delegate = self
         zipcodeTextField.delegate = self
         stateTextField.delegate = self
@@ -96,8 +95,6 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         zipcodeTextField.inputAccessoryView = doneToolbar
         stateTextField.inputAccessoryView = stateToolbar
     }
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -137,9 +134,8 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         
         user.username = emailTextField.text!
         
-        if (addressTextField.text != "" || cityTextField.text != "" || zipcodeTextField.text != "") {
+        if (firstNameTextField.text != "" || lastNameTextField.text != "" || passwordTextField.text != "" || addressTextField.text != "" || cityTextField.text != "" || zipcodeTextField.text != "" || stateTextField.text != "") {
             if passwordTextField.text! == confirmPasswordTextField.text! {
-
                 user.signUpInBackgroundWithBlock {
                     (succeeded: Bool, error: NSError?) -> Void in
                     if let error = error {
@@ -161,19 +157,14 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
                 }
             } else {
                 let alertController = UIAlertController(title: "Password Incorrect", message: "Password and Confirm Password does not match.", preferredStyle: UIAlertControllerStyle.Alert)
-                
                 alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-                
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         } else {
             let alertController = UIAlertController(title: "Missing Fields", message: "Please make sure that all fields are completed.",
                 preferredStyle: UIAlertControllerStyle.Alert)
-            
             alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-            
             self.presentViewController(alertController, animated: true, completion: nil)
-            
         }
      }
     

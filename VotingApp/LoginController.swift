@@ -20,6 +20,8 @@ class LoginController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = true;
@@ -53,8 +55,6 @@ class LoginController: UIViewController {
     }
 
     @IBAction func loginButtonPress(sender: UIButton) {
-        
-        
         PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!) {
             
             (user: PFUser?, error: NSError?) -> Void in
@@ -72,9 +72,20 @@ class LoginController: UIViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
-        
-        
     }
-
+    
+    
+    @IBAction func forgotPasswordPressed(sender: AnyObject) {
+        let requestAlertController = UIAlertController(title: "Forgot your Password?", message: "Please enter the email address you signed up with.", preferredStyle: UIAlertControllerStyle.Alert)
+        requestAlertController.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Email"
+            textField.keyboardType = .EmailAddress
+        }
+        //let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        requestAlertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        //let requestAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: nil)
+        requestAlertController.addAction(UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(requestAlertController, animated: true, completion: nil)
+    }
+    
 }
-
