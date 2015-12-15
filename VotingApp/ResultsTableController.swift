@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class ResultsTableController: UITableViewController {
+    
+    var results: [Ballot] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,33 @@ class ResultsTableController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let nav: HackyNavController = self.navigationController as! HackyNavController
+        
+        if let results = nav.cachedResults {
+            self.results = results
+        } else {
+            let parseQuery = PFQuery(className: "ballots")
+            parseQuery.whereKey("closingDate", lessThan: NSDate()).orderByDescending("closingDate")
+            
+            parseQuery.findObjectsInBackgroundWithBlock {
+                (ballots: [PFObject]?, error: NSError?) -> Void in
+                if let ballots = ballots {
+                    for parseBallot in ballots {
+                        let closingDate = parseBallot["closingDate"] as! NSDate
+                        let title = parseBallot["title"] as! String
+                        let description = parseBallot["description"] as! String
+                        let measureRelation = parseBallot["measures"] as! PFRelation
+                        
+                        let thisBallot = Ballot(measures: nil, measureRelation: measureRelation, closingDate: closingDate, desc: description, title: title)
+                        self.results.append(thisBallot)
+                    }
+                    self.tableView.reloadData()
+                } else {
+                    NSLog("error downloading")
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +59,26 @@ class ResultsTableController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.results.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("resultTableCellIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = self.results[indexPath.row].title
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
