@@ -60,49 +60,66 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
         zipcodeTextField.delegate = self
         stateTextField.delegate = self
         
-        zipcodeTextField.returnKeyType = UIReturnKeyType.Next
-        
-        let zipToolbar = UIToolbar()
-        zipToolbar.barStyle = UIBarStyle.Default
-        zipToolbar.translucent = true
-        zipToolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        zipToolbar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "hidePicker:")
-        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: "nextHandler:")
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let doneToolbar = UIToolbar()
+        doneToolbar.barStyle = UIBarStyle.Default
+        doneToolbar.translucent = true
+        doneToolbar.tintColor = UIColor(red: 60/255, green: 128/255, blue: 255/255, alpha: 1)
+        doneToolbar.sizeToFit()
 
         let stateToolbar = UIToolbar()
         stateToolbar.barStyle = UIBarStyle.Default
         stateToolbar.translucent = true
-        stateToolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        stateToolbar.tintColor = UIColor(red: 60/255, green: 128/255, blue: 255/255, alpha: 1)
         stateToolbar.sizeToFit()
         
-        stateToolbar.setItems([spaceButton, doneButton], animated: false)
+        let doneButton1 = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "hideResponder:")
+        let doneButton2 = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "hideResponder:")
+        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: "nextHandler:")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        stateToolbar.setItems([doneButton1, spaceButton, nextButton], animated: true)
         stateToolbar.userInteractionEnabled = true
         
-        zipToolbar.setItems([nextButton, spaceButton], animated: false)
-        zipToolbar.userInteractionEnabled = true
+        doneToolbar.setItems([spaceButton, doneButton2], animated: true)
+        doneToolbar.userInteractionEnabled = true
         
         stateTextField.inputView = picker
         stateTextField.inputAccessoryView = stateToolbar
         
-        zipcodeTextField.inputAccessoryView = zipToolbar
+        firstNameTextField.inputAccessoryView = doneToolbar
+        lastNameTextField.inputAccessoryView = doneToolbar
+        emailTextField.inputAccessoryView = doneToolbar
+        passwordTextField.inputAccessoryView = doneToolbar
+        confirmPasswordTextField.inputAccessoryView = doneToolbar
+        addressTextField.inputAccessoryView = doneToolbar
+        cityTextField.inputAccessoryView = doneToolbar
+        zipcodeTextField.inputAccessoryView = doneToolbar
+        stateTextField.inputAccessoryView = stateToolbar
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func hidePicker(sender: UIBarButtonItem) -> Bool {
+    func hideResponder(sender: UIBarButtonItem) -> Bool {
+        self.firstNameTextField.resignFirstResponder()
+        self.lastNameTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        self.confirmPasswordTextField.resignFirstResponder()
+        self.addressTextField.resignFirstResponder()
+        self.cityTextField.resignFirstResponder()
+        self.zipcodeTextField.resignFirstResponder()
         self.stateTextField.resignFirstResponder()
-        self.stateTextField.text = self.state
         return true
     }
     
     func nextHandler(sender: UIBarButtonItem) -> Bool {
-        self.textFieldShouldReturn(zipcodeTextField)
+        self.stateTextField.text = self.state
+        self.textFieldShouldReturn(stateTextField)
         return true
     }
     
@@ -162,7 +179,7 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
     
     // For text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        let signUpOrder = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField, confirmPasswordTextField, addressTextField, cityTextField, zipcodeTextField, stateTextField]
+        let signUpOrder = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField, confirmPasswordTextField, addressTextField, cityTextField, stateTextField, zipcodeTextField]
         let matchedFieldNum = signUpOrder.indexOf { (tf) -> Bool in
             return tf == textField
         }
@@ -178,13 +195,13 @@ class CreateProfileController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        if (textField == addressTextField || textField == cityTextField || textField == zipcodeTextField || textField == stateTextField) {
+        if (textField == passwordTextField || textField == confirmPasswordTextField || textField == addressTextField || textField == cityTextField || textField == zipcodeTextField || textField == stateTextField) {
             scrollView.setContentOffset(CGPointMake(0, 100), animated: true)
         }
     }
     
     func textFieldDidEndEditing(textField : UITextField) {
-        scrollView.setContentOffset(CGPointMake(0, -20), animated: true)
+        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
     }
 
     
