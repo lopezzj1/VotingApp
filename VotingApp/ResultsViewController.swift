@@ -9,11 +9,17 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
+    
+    var ballot: Ballot? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if let measures = ballot?.measures {
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

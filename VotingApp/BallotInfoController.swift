@@ -26,15 +26,20 @@ class BallotInfoController: UIViewController {
         
         // Start trying to load the measures ahead of time
         if let ballot = self.ballot {
+            let nav: HackyNavController = self.navigationController as! HackyNavController
             ballot.measureRelation.query().findObjectsInBackgroundWithBlock {
                 (objects: [PFObject]?, error: NSError?) -> Void in
                 if let pMeasures = objects {
+                    nav.cachedBallot?.measures = [String: Measure]()
                     let measures = pMeasures.map {
                         (object: PFObject) -> Measure in
                         let title = object["measureTitle"] as! String
                         let candidates = object["candidates"] as! PFRelation
                         let parseObjId = object.objectId!
-                        return Measure(title: title, candidatesRelation: candidates, candidates: nil, parseObjId: parseObjId)
+                        let thisMeasure = Measure(title: title, candidatesRelation: candidates, candidates: nil, parseObjId: parseObjId)
+                        nav.cachedBallot!.measures![parseObjId] = thisMeasure
+                        
+                        return thisMeasure
                     }
                     if let ctrl = self.tableCtrl {
                         // The table will suddenly populate with data

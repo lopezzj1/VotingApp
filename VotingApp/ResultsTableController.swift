@@ -12,6 +12,8 @@ import Parse
 class ResultsTableController: UITableViewController {
     
     var results: [Ballot] = []
+    
+    var selectedBallot: Ballot? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +26,12 @@ class ResultsTableController: UITableViewController {
         
         let nav: HackyNavController = self.navigationController as! HackyNavController
         
-        if let results = nav.cachedResults {
-            self.results = results
+        if let ballots = nav.cachedResults {
+            for (_, ballot) in ballots {
+                self.results.append(ballot)
+            }
         } else {
+            nav.cachedResults = [String: Ballot]()
             let parseQuery = PFQuery(className: "ballots")
             parseQuery.whereKey("closingDate", lessThan: NSDate()).orderByDescending("closingDate")
             
@@ -38,9 +43,11 @@ class ResultsTableController: UITableViewController {
                         let title = parseBallot["title"] as! String
                         let description = parseBallot["description"] as! String
                         let measureRelation = parseBallot["measures"] as! PFRelation
+                        let parseObjId = parseBallot.objectId!
                         
-                        let thisBallot = Ballot(measures: nil, measureRelation: measureRelation, closingDate: closingDate, desc: description, title: title)
+                        let thisBallot = Ballot(measures: nil, measureRelation: measureRelation, closingDate: closingDate, desc: description, title: title, parseObjId: parseObjId)
                         self.results.append(thisBallot)
+                        nav.cachedResults![parseObjId] = thisBallot
                     }
                     self.tableView.reloadData()
                 } else {
@@ -76,8 +83,9 @@ class ResultsTableController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedBallot = self.results[indexPath.row]
+        self.performSegueWithIdentifier("resultsViewSegue", sender: nil)
     }
 
     /*
@@ -114,15 +122,17 @@ class ResultsTableController: UITableViewController {
         return true
     }
     */
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "resultsViewSegue" {
+            let destinationVC = segue.destinationViewController as! ResultsViewController
+            destinationVC.ballot = self.selectedBallot
+        }
     }
-    */
-
 }
