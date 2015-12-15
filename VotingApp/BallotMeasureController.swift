@@ -77,11 +77,11 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("options", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier("options", forIndexPath: indexPath) as! CandidateCell
         
         if let candidates = self.candidates {
-            //cell.titleLabel.text = candidates[indexPath.row].title
-            cell.textLabel?.text = candidates[indexPath.row].name
+            cell.nameLabel.text = candidates[indexPath.row].name
+            cell.candidate = candidates[indexPath.row]
         }
         
         return cell
@@ -150,6 +150,12 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
         //do nothing if no candidate is selected.
     }
     
+    @IBAction func cellButtonPress(sender: AnyObject) {
+        let button = sender as! UIButton
+        let cell = button.superview as! CandidateCell
+        self.performSegueWithIdentifier("showCandidateDetailSegue", sender: cell)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -159,5 +165,10 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Do an if check if another segue is ever added
         //let dest = segue.destinationViewController as! BallotTableController
+        let cell = sender as! CandidateCell
+        if segue.identifier == "showCandidateDetailSegue" {
+            let destinationVC = segue.destinationViewController as! CandidateDetailController
+            destinationVC.candidate = cell.candidate
+        }
     }
 }
