@@ -15,6 +15,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var voteButton: UIButton!
     @IBOutlet weak var ballotOptions: UITableView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleLabel: UILabel!
 
     var measure: Measure? = nil
     var selectedCandidate: Candidate? = nil
@@ -23,6 +24,8 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.titleLabel.text = measure?.title
+        NSLog("We made it to the ballot measure")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -70,9 +73,11 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
             //SOMETHING BAD HAPPEND THERE IS NO MEASURE
             NSLog("THERE WAS NO MEASURE, THIS SHOULD NOT BE POSSIBLE")
         }
+        tableView.tableFooterView = UIView()
     }
     
     func updateTable() {
+        NSLog("reloading data")
         self.tableView.reloadData()
     }
     
@@ -83,7 +88,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
             cell.nameLabel.text = candidates[indexPath.row].name
             cell.candidate = candidates[indexPath.row]
         }
-        
+        cell.textLabel?.textColor = UIColor.whiteColor()
         return cell
     }
     

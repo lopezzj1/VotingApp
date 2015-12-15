@@ -31,18 +31,10 @@ class LoginController: UIViewController {
         let currentUser = PFUser.currentUser()
         
         if currentUser != nil {
-            PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!) {
-                
-                (user: PFUser?, error: NSError?) -> Void in
-                
-                if user != nil {
-                    print("succes!")
-                    self.performSegueWithIdentifier("loginSegue", sender: nil)
-                    nav.cachedUser = user
-                }
-            }
+            nav.cachedUser = currentUser
+            self.performSegueWithIdentifier("loginSegue", sender: nil)
         } else {
-            print("error")
+            //print("error")
         }
         
         
@@ -72,6 +64,7 @@ class LoginController: UIViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
+        
     }
     
     
@@ -81,9 +74,7 @@ class LoginController: UIViewController {
             textField.placeholder = "Email"
             textField.keyboardType = .EmailAddress
         }
-        //let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         requestAlertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-        //let requestAction = UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: nil)
         requestAlertController.addAction(UIAlertAction(title: "Submit", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(requestAlertController, animated: true, completion: nil)
     }

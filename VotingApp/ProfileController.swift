@@ -171,6 +171,13 @@ class ProfileController: UIViewController, UITextFieldDelegate, UIPickerViewDele
                         }
                     } else {
                         print("success")
+                        
+                        
+                        let requestAlertController = UIAlertController(title: "Success!", message: "Your profile was successfully updated!", preferredStyle: UIAlertControllerStyle.Alert)
+                        requestAlertController.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: nil))
+                        self.presentViewController(requestAlertController, animated: true, completion: nil)
+                        
+                        
                         let nav: HackyNavController = self.navigationController as! HackyNavController
                         nav.cachedUser = user
                         self.performSegueWithIdentifier("createProfileToMenuSegue", sender: nil)
@@ -187,6 +194,10 @@ class ProfileController: UIViewController, UITextFieldDelegate, UIPickerViewDele
             alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func logoutButtonPressed(sender: AnyObject) {
+        PFUser.logOut()
     }
     
     // For text field delegate

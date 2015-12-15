@@ -21,6 +21,7 @@ class BallotTableController: UITableViewController {
         let scroll = UITableViewScrollPosition(rawValue: 0)
         NSLog("about to select")
         self.tableView.selectRowAtIndexPath(path, animated: true, scrollPosition: scroll!)
+        tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +51,7 @@ class BallotTableController: UITableViewController {
         if let measures = self.measures {
             cell.titleLabel.text = measures[indexPath.row].title
         }
+        
         
         return cell
     }

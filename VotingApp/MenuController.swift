@@ -65,11 +65,16 @@ class MenuController: UIViewController {
                 }
             }
         }
+        self.navigationController?.navigationBar.hidden = true;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func logoutButtonPressed(sender: AnyObject) {
+        PFUser.logOut()
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

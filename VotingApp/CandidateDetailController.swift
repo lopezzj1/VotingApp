@@ -11,8 +11,6 @@ import UIKit
 class CandidateDetailController: UIViewController {
     
     var candidate: Candidate? = nil
-
-    @IBOutlet weak var testLabel: UILabel!
     
     @IBAction func dismiss(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -20,7 +18,7 @@ class CandidateDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = candidate?.name
+        //testLabel.text = candidate?.name
 
         // Do any additional setup after loading the view.
     }
