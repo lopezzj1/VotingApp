@@ -48,9 +48,10 @@ class MenuController: UIViewController {
                     let closingDate: NSDate = parseBallot["closingDate"] as! NSDate
                     let title: String = parseBallot["title"] as! String
                     let description: String = parseBallot["description"] as! String
+                    let parseObjId: String = parseBallot.objectId!
                     
                     let ballot = Ballot(measures: nil, measureRelation: measureRelation, closingDate: closingDate, desc: description,
-                        title: title)
+                        title: title, parseObjId: parseObjId)
                     nav.cachedBallot = ballot
                     
                     // If a controller is set, that means we've gone to the next controller already, and will update it there

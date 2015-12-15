@@ -18,6 +18,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
 
     var measure: Measure? = nil
     var selectedCandidate: Candidate? = nil
+    var candidates: [Candidate]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +29,15 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func viewWillAppear(animated: Bool) {
+        let nav: HackyNavController = self.navigationController as! HackyNavController
         if var measure = self.measure {
-            if measure.candidates == nil {
+            if nav.cachedBallot?.measures![measure.parseObjId]?.candidates == nil { //NO CACHED DATA GET SOME
                 measure.candidatesRelation.query().findObjectsInBackgroundWithBlock {
                     (objects: [PFObject]?, error: NSError?) -> Void in
+                    NSLog("getting candidates from net")
                     if let candidates = objects {
-                        measure.candidates = []
+                        measure.candidates = [String: Candidate]()
+                        self.candidates = [Candidate]()
                         for candidateParseObject in candidates {
                             let name = candidateParseObject["name"] as! String
                             let title = candidateParseObject["title"] as! String
@@ -43,14 +47,23 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                             let position = candidateParseObject["position"] as! String
                             let parseObjId = candidateParseObject.objectId! as String
                             let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position, parseObjId: parseObjId)
-                            measure.candidates!.append(thisCandidate)
+                            measure.candidates![parseObjId] = thisCandidate
+                            //nav.cachedBallot?.measures![(self.measure?.parseObjId)!]!.candidates![parseObjId] = thisCandidate
+                            self.candidates!.append(thisCandidate)
                         }
+                        nav.cachedBallot?.measures![measure.parseObjId]?.candidates = measure.candidates
                         self.measure = measure
                         self.updateTable()
                     } else { //no candidates found.
                         //shit this wasn't supposed to happen there are no answers for this ballot
                         NSLog("BAD DATA NO CANDIDATES")
                     }
+                }
+            } else { //DATA WAS CACHED DON'T TOUCH THE NETWORK
+                self.measure!.candidates = nav.cachedBallot?.measures![measure.parseObjId]?.candidates
+                self.candidates = [Candidate]()
+                for (_,candidate) in self.measure!.candidates! {
+                    self.candidates!.append(candidate)
                 }
             }
         }else {
@@ -66,7 +79,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("options", forIndexPath: indexPath) 
         
-        if let candidates = self.measure!.candidates {
+        if let candidates = self.candidates {
             //cell.titleLabel.text = candidates[indexPath.row].title
             cell.textLabel?.text = candidates[indexPath.row].name
         }
@@ -84,7 +97,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedCandidate = self.measure!.candidates![indexPath.row]
+        self.selectedCandidate = self.candidates![indexPath.row]
     }
 
     @IBAction func voteButtonPress(sender: UIButton) {
