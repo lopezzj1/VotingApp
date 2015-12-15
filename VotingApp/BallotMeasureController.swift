@@ -94,25 +94,29 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                 if user.authenticated {
                     //check if the user has already voted on this before
                     let ballotResponseQuery = PFQuery(className:"ballotResponse")
-                    ballotResponseQuery.whereKey("ballotMeasureId", equalTo: self.measure!.parseObjId)
-                    ballotResponseQuery.whereKey("userId", equalTo: user.objectId!)
+                    let user = PFObject.init(withoutDataWithClassName: "_User", objectId: user.objectId!)
+                    let measure = PFObject.init(withoutDataWithClassName: "candidateMeasure", objectId: self.measure!.parseObjId)
+                    ballotResponseQuery.whereKey("measure", equalTo: measure)
+                    ballotResponseQuery.whereKey("user", equalTo: user)
                     
                     var ballotResponse: PFObject? = nil
                     
                     ballotResponseQuery.findObjectsInBackgroundWithBlock {
                         (objects: [PFObject]?, error: NSError?) -> Void in
                         if let objects = objects {
+                            let candidate = PFObject.init(withoutDataWithClassName: "candidates", objectId: candidate.parseObjId)
                             if objects.count > 0 { //update old vote
                                 ballotResponse = objects[0]
-                                ballotResponse!["candidateId"] = candidate.parseObjId
+                                ballotResponse!["candidate"] = candidate
+                                ballotResponse!["user"] = user
                             } else { // new vote
                                 ballotResponse = PFObject(className:"ballotResponse")
-                                ballotResponse!["ballotMeasureId"] = self.measure!.parseObjId
-                                ballotResponse!["userId"] = user.objectId!
-                                ballotResponse!["candidateId"] = candidate.parseObjId
+                                ballotResponse!["measure"] = measure
+                                ballotResponse!["user"] = user
+                                ballotResponse!["candidate"] = candidate
                             }
                         } else { //error
-                            
+
                         }
                         ballotResponse!.saveInBackgroundWithBlock {
                             (success: Bool, error: NSError?) -> Void in
