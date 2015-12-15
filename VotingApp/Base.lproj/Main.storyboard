@@ -540,16 +540,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WcS-Vn-gcO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultTableCellIdentifier" id="WcS-Vn-gcO">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WcS-Vn-gcO" id="JMs-pI-5Yd">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="ilm-Kj-1Bg" kind="show" identifier="resultsViewSegue" id="aXc-eh-nJb"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -557,6 +554,9 @@
                             <outlet property="delegate" destination="hvc-bB-tlO" id="CTT-dC-mk3"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="ilm-Kj-1Bg" kind="show" identifier="resultsViewSegue" id="8Vc-cF-BwQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21P-1m-N5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
