@@ -1,19 +1,18 @@
 //
-//  ResultsTableController.swift
+//  ResultsMeasuresTableController.swift
 //  VotingApp
 //
-//  Created by iGuest on 12/3/15.
+//  Created by iGuest on 12/15/15.
 //  Copyright © 2015 Jill Lopez. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class ResultsTableController: UITableViewController {
+class ResultsMeasuresTableController: UITableViewController {
     
-    var results: [Ballot] = []
-    
-    var selectedBallot: Ballot? = nil
+    var ballot: Ballot? = nil
+    var measures: [Measure]? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,37 +23,38 @@ class ResultsTableController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let nav: HackyNavController = self.navigationController as! HackyNavController
-        
-        if let ballots = nav.cachedResults {
-            for (_, ballot) in ballots {
-                self.results.append(ballot)
-            }
-        } else {
-            nav.cachedResults = [String: Ballot]()
-            let parseQuery = PFQuery(className: "ballots")
-            parseQuery.whereKey("closingDate", lessThan: NSDate()).orderByDescending("closingDate")
-            
-            parseQuery.findObjectsInBackgroundWithBlock {
-                (ballots: [PFObject]?, error: NSError?) -> Void in
-                if let ballots = ballots {
-                    for parseBallot in ballots {
-                        let closingDate = parseBallot["closingDate"] as! NSDate
-                        let title = parseBallot["title"] as! String
-                        let description = parseBallot["description"] as! String
-                        let measureRelation = parseBallot["measures"] as! PFRelation
-                        let parseObjId = parseBallot.objectId!
-                        
-                        let thisBallot = Ballot(measures: nil, measureRelation: measureRelation, closingDate: closingDate, desc: description, title: title, parseObjId: parseObjId)
-                        self.results.append(thisBallot)
-                        nav.cachedResults![parseObjId] = thisBallot
+        if let ballot = self.ballot {
+            let nav: HackyNavController = self.navigationController as! HackyNavController
+            if nav.cachedResults![ballot.parseObjId]?.measures == nil { //no cached data go get some
+                ballot.measureRelation.query().findObjectsInBackgroundWithBlock {
+                    (objects: [PFObject]?, error: NSError?) -> Void in
+                    NSLog("getting measures from net")
+                    if let pMeasures = objects {
+                        nav.cachedBallot?.measures = [String: Measure]()
+                        let measures = pMeasures.map {
+                            (object: PFObject) -> Measure in
+                            let title = object["measureTitle"] as! String
+                            let candidates = object["candidates"] as! PFRelation
+                            let parseObjId = object.objectId!
+                            let thisMeasure = Measure(title: title, candidatesRelation: candidates, candidates: nil, parseObjId: parseObjId)
+                            nav.cachedBallot!.measures![parseObjId] = thisMeasure
+                            
+                            return thisMeasure
+                        }
+                        self.measures = measures
+                        self.tableView.reloadData()
                     }
-                    self.tableView.reloadData()
-                } else {
-                    NSLog("error downloading")
+                }
+            } else {
+                self.measures = [Measure]()
+                for (_, measure) in nav.cachedResults![ballot.parseObjId]!.measures! {
+                    self.measures!.append(measure)
                 }
             }
+            
         }
+        
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,21 +71,20 @@ class ResultsTableController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.results.count
+        if let measures = self.measures {
+            return measures.count
+        }
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("resultTableCellIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("measure", forIndexPath: indexPath)
 
-        // Configure the cell...
-        cell.textLabel?.text = self.results[indexPath.row].title
+        if let measures = self.measures {
+            cell.textLabel?.text = measures[indexPath.row].title
+        }
 
         return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedBallot = self.results[indexPath.row]
-        self.performSegueWithIdentifier("resultsViewSegue", sender: nil)
     }
 
     /*
@@ -122,17 +121,15 @@ class ResultsTableController: UITableViewController {
         return true
     }
     */
-    
+
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "resultsViewSegue" {
-            let destinationVC = segue.destinationViewController as! ResultsMeasuresTableController
-            destinationVC.ballot = self.selectedBallot
-        }
     }
+    */
+
 }
