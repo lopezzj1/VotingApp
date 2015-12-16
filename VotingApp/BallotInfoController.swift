@@ -77,6 +77,10 @@ class BallotInfoController: UIViewController {
                 self.ballotInformation.text = b.desc
                 self.ballotTitle.text = b.title
                 self.closingDate.text = b.closingDate.description
+                
+                let url = NSURL(string: b.image)
+                let data = NSData(contentsOfURL: url!)
+                ballotImage.image = UIImage(data: data!)
             }
         }
         self.ballotInformation.font = UIFont(name: (ballotTitle.font?.fontName)!, size: 17)

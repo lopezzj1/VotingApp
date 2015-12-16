@@ -44,8 +44,9 @@ class ResultsTableController: UITableViewController {
                         let description = parseBallot["description"] as! String
                         let measureRelation = parseBallot["measures"] as! PFRelation
                         let parseObjId = parseBallot.objectId!
+                        let image = parseBallot["ballotImageURL"] as! String
                         
-                        let thisBallot = Ballot(measures: nil, measureRelation: measureRelation, closingDate: closingDate, desc: description, title: title, parseObjId: parseObjId)
+                        let thisBallot = Ballot(measures: nil, measureRelation: measureRelation, closingDate: closingDate, desc: description, title: title, parseObjId: parseObjId, image: image)
                         self.results.append(thisBallot)
                         nav.cachedResults![parseObjId] = thisBallot
                     }
