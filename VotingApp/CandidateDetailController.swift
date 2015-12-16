@@ -22,13 +22,14 @@ class CandidateDetailController: UIViewController {
         UIApplication.sharedApplication().openURL(url!)
     }
     
+    
     @IBAction func dismiss(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.nameLabel.text = self.candidate?.name
         self.partyLabel.text = self.candidate?.party

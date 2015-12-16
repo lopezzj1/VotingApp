@@ -1,25 +1,22 @@
 //
-//  ResultsViewController.swift
+//  ResultsMeasureDetailController.swift
 //  VotingApp
 //
-//  Created by iGuest on 12/8/15.
+//  Created by iGuest on 12/15/15.
 //  Copyright © 2015 Jill Lopez. All rights reserved.
 //
 
 import UIKit
 
-class ResultsViewController: UITableViewController {
-    
-    var ballot: Ballot? = nil
+class ResultsMeasureDetailController: UIViewController {
 
+    @IBOutlet weak var measureLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalVotes: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        if let measures = ballot?.measures {
-            
-        }
     }
 
     override func didReceiveMemoryWarning() {
