@@ -17,6 +17,8 @@ class BallotInfoController: UIViewController {
     @IBOutlet weak var ballotTitle: UILabel!
     @IBOutlet weak var closingDate: UILabel!
     @IBOutlet weak var ballotInformation: UITextView!
+    @IBOutlet weak var ballotImage: UIImageView!
+    
     
     var ballot: Ballot? = nil
     var measures: [Measure]? = nil
