@@ -55,6 +55,9 @@ class ResultsMeasuresTableController: UITableViewController {
             
         }
         
+        tableView.tableFooterView = UIView()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "colored_background_blur"))
+        
         self.tableView.reloadData()
     }
 
@@ -84,7 +87,13 @@ class ResultsMeasuresTableController: UITableViewController {
         if let measures = self.measures {
             cell.textLabel?.text = measures[indexPath.row].title
         }
+        
+        cell.textLabel?.textColor = UIColor.lightGrayColor()
 
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(red: 21/255, green: 63/255, blue: 129/255, alpha: 1)
+        cell.selectedBackgroundView = backgroundView
+        
         return cell
     }
     
@@ -143,6 +152,14 @@ class ResultsMeasuresTableController: UITableViewController {
             destinationVC.measure = self.measureToSend
             destinationVC.ballotParseObjId = self.ballot!.parseObjId
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = false
     }
 
 }
