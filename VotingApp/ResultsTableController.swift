@@ -144,13 +144,4 @@ class ResultsTableController: UITableViewController {
             destinationVC.ballot = self.selectedBallot
         }
     }
-    
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.navigationBar.hidden = true
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.hidden = false
-    }
-
 }
