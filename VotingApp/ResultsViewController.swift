@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultsViewController: UIViewController {
+class ResultsViewController: UITableViewController {
     
     var ballot: Ballot? = nil
 
