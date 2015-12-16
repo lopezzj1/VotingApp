@@ -31,6 +31,10 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func backButtonPress(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         let nav: HackyNavController = self.navigationController as! HackyNavController
         if var measure = self.measure {
@@ -153,7 +157,18 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                 NSLog("no user somehow")
             }
         }
-        //do nothing if no candidate is selected.
+        
+        let alertController = UIAlertController(title: "Thank you for voting!", message: "We have received your vote. Thank you for voting!",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+
+        let backAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) in
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        alertController.addAction(backAction)
+            
+        self.presentViewController(alertController, animated: true, completion: nil)
+
     }
     
     @IBAction func cellButtonPress(sender: AnyObject) {

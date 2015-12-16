@@ -24,6 +24,14 @@ class BallotInfoController: UIViewController {
     var measures: [Measure]? = nil
     var tableCtrl: BallotTableController? = nil
     
+    
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,7 +84,7 @@ class BallotInfoController: UIViewController {
             if let b = self.ballot {
                 self.ballotInformation.text = b.desc
                 self.ballotTitle.text = b.title
-                self.closingDate.text = b.closingDate.description
+                self.closingDate.text = NSDateFormatter.localizedStringFromDate(b.closingDate, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
             }
         }
         self.ballotInformation.font = UIFont(name: (ballotTitle.font?.fontName)!, size: 17)
