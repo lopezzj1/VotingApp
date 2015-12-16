@@ -12,6 +12,7 @@ class CandidateCell: UITableViewCell {
     
     var candidate: Candidate? = nil
 
+    @IBOutlet weak var detailButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {

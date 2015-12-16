@@ -92,6 +92,9 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
         if let candidates = self.candidates {
             cell.nameLabel.text = candidates[indexPath.row].name
             cell.candidate = candidates[indexPath.row]
+            if candidates[indexPath.row].name == "Yes" || candidates[indexPath.row].name == "No" {
+                cell.detailButton.hidden = true
+            }
         }
         cell.textLabel?.textColor = UIColor.whiteColor()
         return cell

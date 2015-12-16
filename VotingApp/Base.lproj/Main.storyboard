@@ -787,6 +787,7 @@
                                             <constraint firstAttribute="trailing" secondItem="OSE-5K-bbj" secondAttribute="trailing" constant="8" id="tyi-5x-1Ds"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="detailButton" destination="OSE-5K-bbj" id="ClZ-uk-M8d"/>
                                             <outlet property="nameLabel" destination="HI0-Di-yFx" id="goa-f7-Jim"/>
                                         </connections>
                                     </tableViewCell>
@@ -1022,9 +1023,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colored_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="JKX-FK-xnd">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iX4-DI-f4k">
                                 <rect key="frame" x="45" y="150" width="510" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1084,6 +1082,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colored_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="JKX-FK-xnd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
