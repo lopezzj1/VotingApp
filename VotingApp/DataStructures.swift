@@ -33,6 +33,7 @@ struct Candidate {
     let pictureURL: String
     let position: String
     let parseObjId: String
+    let party: String
     let votes: Int? = nil
 }
 

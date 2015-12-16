@@ -18,7 +18,8 @@ class CandidateDetailController: UIViewController {
     @IBOutlet weak var bioLabel: UILabel!
     
     @IBAction func websiteButtonPress(sender: UIButton) {
-    
+        let url = NSURL(string: (self.candidate?.bioURL)!)
+        UIApplication.sharedApplication().openURL(url!)
     }
     
     @IBAction func dismiss(sender: UIButton) {
@@ -29,6 +30,10 @@ class CandidateDetailController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.nameLabel.text = self.candidate?.name
+        self.partyLabel.text = self.candidate?.party
+        self.currTitleLabel.text = self.candidate?.title
+        self.bioLabel.text = self.candidate?.bioText
     }
 
     override func didReceiveMemoryWarning() {
