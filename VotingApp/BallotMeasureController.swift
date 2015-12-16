@@ -54,7 +54,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                             let position = candidateParseObject["position"] as! String
                             let parseObjId = candidateParseObject.objectId! as String
                             let party = candidateParseObject["party"] as! String
-                            let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position, parseObjId: parseObjId, party: party)
+                            let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position, parseObjId: parseObjId, party: party, votes: nil)
                             measure.candidates![parseObjId] = thisCandidate
                             //nav.cachedBallot?.measures![(self.measure?.parseObjId)!]!.candidates![parseObjId] = thisCandidate
                             self.candidates!.append(thisCandidate)
@@ -156,18 +156,34 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
             } else {
                 NSLog("no user somehow")
             }
+            
+            let alertController = UIAlertController(title: "Thank you for voting!", message: "We have received your vote. Thank you for voting!",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            
+            let backAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) in
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+            alertController.addAction(backAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            
+            // Inform them they haven't selected anyone
+            let alertController = UIAlertController(title: "Please select a candidate!", message: "You need to select a candidate",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            
+            
+            let backAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) in
+                return
+            }
+            alertController.addAction(backAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
         }
-        
-        let alertController = UIAlertController(title: "Thank you for voting!", message: "We have received your vote. Thank you for voting!",
-            preferredStyle: UIAlertControllerStyle.Alert)
         
 
-        let backAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) in
-            self.navigationController?.popViewControllerAnimated(true)
-        }
-        alertController.addAction(backAction)
-            
-        self.presentViewController(alertController, animated: true, completion: nil)
 
     }
     
