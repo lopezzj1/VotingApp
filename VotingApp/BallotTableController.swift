@@ -83,6 +83,14 @@ class BallotTableController: UITableViewController {
             destinationVC.measure = self.measureToSend
         }
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = false
+    }
 
 
 }
