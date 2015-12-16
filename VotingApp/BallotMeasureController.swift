@@ -49,7 +49,8 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
                             let pictureURL = candidateParseObject["pictureURL"] as! String
                             let position = candidateParseObject["position"] as! String
                             let parseObjId = candidateParseObject.objectId! as String
-                            let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position, parseObjId: parseObjId)
+                            let party = candidateParseObject["party"] as! String
+                            let thisCandidate = Candidate(name: name, title: title, bioURL: bioURL, bioText: bioText, pictureURL: pictureURL, position: position, parseObjId: parseObjId, party: party)
                             measure.candidates![parseObjId] = thisCandidate
                             //nav.cachedBallot?.measures![(self.measure?.parseObjId)!]!.candidates![parseObjId] = thisCandidate
                             self.candidates!.append(thisCandidate)
