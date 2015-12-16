@@ -128,6 +128,21 @@ class ResultsMeasureDetailController: UIViewController, UITableViewDataSource, U
         self.calcTotalVotes()
         self.tableView.reloadData()
     }
+    
+    
+    
+    
+    @IBAction func backButton(sender: UIButton) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        
+        
+    }
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

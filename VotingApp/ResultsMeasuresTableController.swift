@@ -153,5 +153,13 @@ class ResultsMeasuresTableController: UITableViewController {
             destinationVC.ballotParseObjId = self.ballot!.parseObjId
         }
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = false
+    }
 
 }
