@@ -84,7 +84,13 @@ class BallotInfoController: UIViewController {
             if let b = self.ballot {
                 self.ballotInformation.text = b.desc
                 self.ballotTitle.text = b.title
+
                 self.closingDate.text = NSDateFormatter.localizedStringFromDate(b.closingDate, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+                
+                let url = NSURL(string: b.image)
+                let data = NSData(contentsOfURL: url!)
+                ballotImage.image = UIImage(data: data!)
+
             }
         }
         self.ballotInformation.font = UIFont(name: (ballotTitle.font?.fontName)!, size: 17)

@@ -16,6 +16,7 @@ struct Ballot {
     let desc: String
     let title: String
     let parseObjId: String
+    let image: String
 }
 
 struct Measure {
