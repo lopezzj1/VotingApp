@@ -13,6 +13,7 @@ class ResultsMeasuresTableController: UITableViewController {
     
     var ballot: Ballot? = nil
     var measures: [Measure]? = nil
+    var measureToSend:Measure? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +31,14 @@ class ResultsMeasuresTableController: UITableViewController {
                     (objects: [PFObject]?, error: NSError?) -> Void in
                     NSLog("getting measures from net")
                     if let pMeasures = objects {
-                        nav.cachedBallot?.measures = [String: Measure]()
+                        nav.cachedResults![ballot.parseObjId]?.measures = [String: Measure]()
                         let measures = pMeasures.map {
                             (object: PFObject) -> Measure in
                             let title = object["measureTitle"] as! String
                             let candidates = object["candidates"] as! PFRelation
                             let parseObjId = object.objectId!
                             let thisMeasure = Measure(title: title, candidatesRelation: candidates, candidates: nil, parseObjId: parseObjId)
-                            nav.cachedBallot!.measures![parseObjId] = thisMeasure
+                            nav.cachedResults![ballot.parseObjId]!.measures![parseObjId] = thisMeasure
                             
                             return thisMeasure
                         }
@@ -86,6 +87,15 @@ class ResultsMeasuresTableController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let measure = self.measures?[indexPath.row] {
+            
+            self.measureToSend = measure
+            
+            self.performSegueWithIdentifier("showMeasureDetailSegue", sender: nil)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -122,14 +132,17 @@ class ResultsMeasuresTableController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showMeasureDetailSegue" {
+            let destinationVC = segue.destinationViewController as! ResultsMeasureDetailController
+            destinationVC.measure = self.measureToSend
+            destinationVC.ballotParseObjId = self.ballot!.parseObjId
+        }
     }
-    */
 
 }
