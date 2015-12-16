@@ -15,6 +15,7 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var voteButton: UIButton!
     @IBOutlet weak var ballotOptions: UITableView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleLabel: UILabel!
 
     var measure: Measure? = nil
     var selectedCandidate: Candidate? = nil
@@ -23,6 +24,8 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.titleLabel.text = measure?.title
+        NSLog("We made it to the ballot measure")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -74,15 +77,16 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func updateTable() {
+        NSLog("reloading data")
         self.tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("options", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier("options", forIndexPath: indexPath) as! CandidateCell
         
         if let candidates = self.candidates {
-            //cell.titleLabel.text = candidates[indexPath.row].title
-            cell.textLabel?.text = candidates[indexPath.row].name
+            cell.nameLabel.text = candidates[indexPath.row].name
+            cell.candidate = candidates[indexPath.row]
         }
         cell.textLabel?.textColor = UIColor.whiteColor()
         return cell
@@ -151,6 +155,12 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
         //do nothing if no candidate is selected.
     }
     
+    @IBAction func cellButtonPress(sender: AnyObject) {
+        let button = sender as! UIButton
+        let cellView = button.superview?.superview as! UITableViewCell
+        self.performSegueWithIdentifier("showCandidateDetailSegue", sender: cellView)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -160,5 +170,10 @@ class BallotMeasureController: UIViewController, UITableViewDataSource, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Do an if check if another segue is ever added
         //let dest = segue.destinationViewController as! BallotTableController
+        let cell = sender as! CandidateCell
+        if segue.identifier == "showCandidateDetailSegue" {
+            let destinationVC = segue.destinationViewController as! CandidateDetailController
+            destinationVC.candidate = cell.candidate
+        }
     }
 }

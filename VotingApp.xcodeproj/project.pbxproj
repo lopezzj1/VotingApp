@@ -12,6 +12,8 @@
 		9D61376F1C1CE1E700EEF6D8 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D61376E1C1CE1E700EEF6D8 /* DataStructures.swift */; };
 		9D6137711C1CE30100EEF6D8 /* MeasureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6137701C1CE30100EEF6D8 /* MeasureCell.swift */; };
 		9DA9785C1C1E42E70083C3C1 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9785B1C1E42E70083C3C1 /* CustomUITextField.swift */; };
+		9DAE7ED51C1FD4570013D96B /* CandidateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE7ED41C1FD4570013D96B /* CandidateCell.swift */; };
+		9DAE7ED71C1FD7720013D96B /* CandidateDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE7ED61C1FD7720013D96B /* CandidateDetailController.swift */; };
 		9DD81E771C1141A00001776B /* CreateProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E761C1141A00001776B /* CreateProfileController.swift */; };
 		9DD81E791C1142130001776B /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E781C1142130001776B /* MenuController.swift */; };
 		9DD81E7B1C1142280001776B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD81E7A1C1142280001776B /* ProfileController.swift */; };
@@ -53,6 +55,8 @@
 		9D61376E1C1CE1E700EEF6D8 /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		9D6137701C1CE30100EEF6D8 /* MeasureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureCell.swift; sourceTree = "<group>"; };
 		9DA9785B1C1E42E70083C3C1 /* CustomUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
+		9DAE7ED41C1FD4570013D96B /* CandidateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateCell.swift; sourceTree = "<group>"; };
+		9DAE7ED61C1FD7720013D96B /* CandidateDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateDetailController.swift; sourceTree = "<group>"; };
 		9DD81E761C1141A00001776B /* CreateProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileController.swift; sourceTree = "<group>"; };
 		9DD81E781C1142130001776B /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		9DD81E7A1C1142280001776B /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				9DD81E7A1C1142280001776B /* ProfileController.swift */,
 				9DD81E7C1C1142430001776B /* ResultsTableController.swift */,
 				9D4D5D521C17A5C300BD65DE /* ResultsViewController.swift */,
+				9DAE7ED41C1FD4570013D96B /* CandidateCell.swift */,
+				9DAE7ED61C1FD7720013D96B /* CandidateDetailController.swift */,
 			);
 			path = VotingApp;
 			sourceTree = "<group>";
@@ -379,10 +385,12 @@
 				9DD81E771C1141A00001776B /* CreateProfileController.swift in Sources */,
 				9DD81E7D1C1142430001776B /* ResultsTableController.swift in Sources */,
 				A55C0A841C111DD20014E4EA /* LoginController.swift in Sources */,
+				9DAE7ED51C1FD4570013D96B /* CandidateCell.swift in Sources */,
 				9D6137711C1CE30100EEF6D8 /* MeasureCell.swift in Sources */,
 				9D6137691C1CD26100EEF6D8 /* HackyNavController.swift in Sources */,
 				9D61376F1C1CE1E700EEF6D8 /* DataStructures.swift in Sources */,
 				9DD81E7F1C11429A0001776B /* BallotInfoController.swift in Sources */,
+				9DAE7ED71C1FD7720013D96B /* CandidateDetailController.swift in Sources */,
 				A55C0A821C111DD20014E4EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
