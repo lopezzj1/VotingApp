@@ -22,6 +22,7 @@ class BallotTableController: UITableViewController {
         NSLog("about to select")
         self.tableView.selectRowAtIndexPath(path, animated: true, scrollPosition: scroll!)
         tableView.tableFooterView = UIView()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "colored_background_blur"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +53,9 @@ class BallotTableController: UITableViewController {
             cell.titleLabel.text = measures[indexPath.row].title
         }
         
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(red: 21/255, green: 63/255, blue: 129/255, alpha: 1)
+        cell.selectedBackgroundView = backgroundView
         
         return cell
     }

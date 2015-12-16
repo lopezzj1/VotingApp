@@ -551,7 +551,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L46-qt-7oI">
-                                <rect key="frame" x="30" y="287" width="540" height="210"/>
+                                <rect key="frame" x="30" y="292" width="540" height="210"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0a-zi-SCB">
                                         <rect key="frame" x="9" y="0.0" width="101" height="42"/>
@@ -641,7 +641,7 @@
                             <constraint firstItem="670-fm-6qV" firstAttribute="top" secondItem="PM9-np-pXg" secondAttribute="bottom" constant="25" id="JGn-n7-Sli"/>
                             <constraint firstItem="L46-qt-7oI" firstAttribute="height" secondItem="CNV-DW-BAj" secondAttribute="height" multiplier="0.35" id="Nqj-tN-KEH"/>
                             <constraint firstItem="vuC-OV-ays" firstAttribute="width" secondItem="CNV-DW-BAj" secondAttribute="width" multiplier="0.33" id="NzI-Dx-zrT"/>
-                            <constraint firstItem="L46-qt-7oI" firstAttribute="top" secondItem="670-fm-6qV" secondAttribute="bottom" constant="20" id="P9C-W5-aud"/>
+                            <constraint firstItem="L46-qt-7oI" firstAttribute="top" secondItem="670-fm-6qV" secondAttribute="bottom" constant="25" id="P9C-W5-aud"/>
                             <constraint firstItem="L46-qt-7oI" firstAttribute="centerX" secondItem="CNV-DW-BAj" secondAttribute="centerX" id="RYn-o7-Thm"/>
                             <constraint firstItem="L46-qt-7oI" firstAttribute="width" secondItem="CNV-DW-BAj" secondAttribute="width" multiplier="0.9" id="Sfv-eQ-Opp"/>
                             <constraint firstItem="6B8-4Q-FxT" firstAttribute="centerY" secondItem="CNV-DW-BAj" secondAttribute="centerY" id="TMH-EQ-iPf"/>
@@ -686,15 +686,16 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Measure Title" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tz-f3-RKL">
                                             <rect key="frame" x="25" y="14" width="549" height="69"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <animations/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="titleLabel" destination="0Tz-f3-RKL" id="V7e-2S-wuV"/>
                                 </connections>
