@@ -75,7 +75,7 @@ class ResultsMeasureDetailController: UIViewController, UITableViewDataSource, U
                     }
                 }
             } else { //DATA WAS CACHED DON'T TOUCH THE NETWORK
-                self.measure!.candidates = nav.cachedBallot?.measures![measure.parseObjId]?.candidates
+                self.measure!.candidates = nav.cachedResults![ballotParseObjId!]!.measures![measure.parseObjId]?.candidates
                 self.candidates = [Candidate]()
                 for (_,candidate) in self.measure!.candidates! {
                     self.candidates!.append(candidate)
