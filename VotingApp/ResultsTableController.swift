@@ -24,6 +24,9 @@ class ResultsTableController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        tableView.tableFooterView = UIView()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "colored_background_blur"))
+        
         let nav: HackyNavController = self.navigationController as! HackyNavController
         
         if let ballots = nav.cachedResults {
@@ -80,6 +83,11 @@ class ResultsTableController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = self.results[indexPath.row].title
+        cell.textLabel?.textColor = UIColor.lightGrayColor()
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(red: 21/255, green: 63/255, blue: 129/255, alpha: 1)
+        cell.selectedBackgroundView = backgroundView
 
         return cell
     }
